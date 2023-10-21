@@ -11,10 +11,10 @@ function App() {
       <main className='screen'>
         <Routes>
           <Route path='/' element={"ConectaJP"}/>
-          <Route path='/loja' element={"ConectaJP"}/>
-          <Route path='/mais' element={"ConectaJP"}/>
-          <Route path='/mapa' element={"ConectaJP"}/>
-          <Route path='/minha-conta' element={"ConectaJP"}/>
+          <Route path='/loja' element={"ConectaJP - Loja"}/>
+          <Route path='/mais' element={"ConectaJP - Mais"}/>
+          <Route path='/mapa' element={"ConectaJP - Mapa"}/>
+          <Route path='/minha-conta' element={"ConectaJP - Conta"}/>
         </Routes> 
         <Menu/>
       </main>

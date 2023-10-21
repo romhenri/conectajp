@@ -5,9 +5,29 @@
 
   position: absolute;
   bottom: 0px;
+  z-index: 999;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .navbar nav {
   display: flex;
   justify-content: space-around;
+
+  padding: 8px 20px 15px;
+}
+
+.navbar nav a {
+  width: 52px;
+  height: 52px;
+  border-radius: 30%;
+
+  border: 2px solid #01347C;
+  color: #01347C;
+  text-decoration: none;
+}
+
+.navbar nav a.active {
+  color: aliceblue;
+  background-color: #01347C;
+  transition: .2s;
 }
