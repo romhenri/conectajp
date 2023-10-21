@@ -1,0 +1,43 @@
+.productCard {
+  background-color: rgba(240, 248, 255, 0.65);
+  border: 1px solid #0000003a;
+  height: 120px;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+
+  display: flex;
+}
+
+.store-section {
+  display: block;
+  height: 90%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding-bottom: 110px;
+}
+
+.image-box {
+  flex-grow: 1;
+}
+
+.image-box img {
+  height: 100%;
+}
+
+.content-box {
+  flex-grow: 4;
+}
+
+/* SCROLL */
+
+.store-section::-webkit-scrollbar {
+  display: none;
+}
+.store-section::-webkit-scrollbar-track {
+	background: #1b1a1a;
+}
+.store-section::-webkit-scrollbar-thumb
+html {
+	scroll-behavior: smooth;
+}

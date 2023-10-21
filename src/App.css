@@ -25,6 +25,7 @@ main {
   text-align: center;
   color: black;
   position: relative;
+  overflow: hidden;
 
   background: linear-gradient(90deg, rgba(148,186,254,1) 0%, rgba(142,249,167,1) 100%);
 }
