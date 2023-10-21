@@ -1,3 +1,30 @@
+/* Header */
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+header h1 {
+  margin: 25px auto 20px auto;
+}
+ 
+#searchBar {
+  flex-grow: 1;
+  border-radius: 10px;
+  margin: 0px 10px 10px 10px;
+  background-color: rgba(240, 248, 255, 0.65);
+  border: 1px solid #0000003a;
+  padding: 0px 15px;
+  margin:  0px 25px 10px 25px;
+}
+
+#searchBar:focus {
+  border: 1px solid #0000006e;
+  outline: none;
+}
+
 .productCard {
   background-color: rgba(240, 248, 255, 0.65);
   border: 1px solid #0000003a;
@@ -18,7 +45,10 @@
 }
 
 .image-box {
-  flex-grow: 1;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .image-box img {
@@ -26,7 +56,41 @@
 }
 
 .content-box {
-  flex-grow: 4;
+  flex-grow: 1;
+  position: relative;
+  padding: 5px 20px;
+}
+
+.content-box h2 {
+  text-align: start;
+  margin-bottom: 3px;
+}
+
+.content-box p.desc {
+  text-align: start;
+  opacity: .7;
+}
+
+.price-box {
+  position: absolute;
+  right: 5px;
+  bottom: 0px;
+}
+
+.price-box p {
+  font-size: 1.5em;
+}
+
+.price-box span {
+  font-size: .9em;
+  text-decoration:line-through;
+  opacity: .6;
+}
+
+.review-box {
+  position: absolute;
+  left: 25px;
+  bottom: 0px;
 }
 
 /* SCROLL */
@@ -41,3 +105,4 @@
 html {
 	scroll-behavior: smooth;
 }
+
