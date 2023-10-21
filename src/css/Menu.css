@@ -21,13 +21,30 @@
   height: 52px;
   border-radius: 30%;
 
-  border: 2px solid  #184d97;
+  /* border: 2px solid  #184d97; */
   color:  #184d97;
   text-decoration: none;
 }
 
 .navbar nav a.active {
   color: aliceblue;
-  background-color: #184d97;
+  background-color: #2873b1;
   transition: .2s;
+}
+
+nav a svg {
+  font-size: 2em;
+  fill: #184d9765;
+  margin: 8px;
+  transition: .2s;
+}
+
+nav a.active svg {
+  fill: aliceblue;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    position: fixed;
+  }
 }
