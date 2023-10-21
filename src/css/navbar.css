@@ -1,0 +1,13 @@
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: aliceblue;
+
+  position: absolute;
+  bottom: 0px;
+}
+
+.navbar nav {
+  display: flex;
+  justify-content: space-around;
+}
