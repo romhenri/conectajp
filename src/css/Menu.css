@@ -33,14 +33,18 @@
 }
 
 nav a svg {
-  font-size: 2em;
+  font-size: 1.8em;
   fill: #184d9765;
-  margin: 8px;
+  margin: 10px auto;
   transition: .2s;
 }
 
 nav a.active svg {
   fill: aliceblue;
+}
+
+.alt {
+  fill: #5ad38c;
 }
 
 @media (max-width: 800px) {
