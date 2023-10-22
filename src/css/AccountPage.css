@@ -8,6 +8,7 @@ header.page-header.account-page {
   display: flex;
   align-items: center;
   padding: 10px 25px;
+  background-color: rgba(240, 248, 255, 0.85);
 }
 
 section.account-section.account-page {
@@ -24,6 +25,10 @@ section.account-section.account-page {
   height: 120px;
 }
 
+.account-page .content-box h2 {
+  font-size: 1.5em;
+}
+
 .account-page .content-box {
   box-sizing: border-box;
   padding: 25px 25px;
@@ -38,4 +43,47 @@ section.account-section.account-page {
 
 .account-page .review-box img {
   width: 20px;
+}
+
+.account-section .option {
+  box-sizing: border-box;
+  height: 50px;
+  background-color: rgba(240, 248, 255, 0.55);
+  padding: 14px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+}
+
+.account-section .options {
+  display: flex;
+  box-sizing: border-box;
+  height: 120px;
+  background-color: rgba(240, 248, 255, 0.55);
+  padding: 15px 30px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.options .option {
+  border: 1px solid #0000003a;
+  flex-grow: 1;
+  height: 100%;
+  background-color: rgba(240, 248, 255, 0.25);
+  flex-basis: 0;
+  flex-wrap: wrap;
+  margin-bottom: 0px !important;
+  padding: 16px 0px;
+}
+
+.options .option svg {
+  width: 100%;
+  fill: #5ad38c;
+  margin-bottom: 3px;
+}
+
+.account-section hr {
+  opacity: .6;
+  border-top: 1px solid #0000003a;
+  border-bottom: none;
 }
