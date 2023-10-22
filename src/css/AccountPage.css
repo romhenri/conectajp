@@ -1,0 +1,41 @@
+header.page-header.account-page {
+  height: 100px !important;
+}
+
+.middle-section.account-page {
+  top: 110px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+}
+
+section.account-section.account-page {
+  top: 300px;
+  display: block;
+  height: 80%;
+  padding-top: 16px;
+  padding-bottom: 150px;
+}
+
+.account-page .image-box {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.account-page .content-box {
+  box-sizing: border-box;
+  padding: 25px 25px;
+  height: 100%;
+}
+
+.account-page .review-box {
+  position: initial;
+  display: flex;
+  margin-top: 10px;
+}
+
+.account-page .review-box img {
+  width: 20px;
+}

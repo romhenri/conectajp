@@ -7,7 +7,7 @@ import '../css/StorePage.css'
 const StorePage = () => {
   return (<>
     <header className='page-header'>
-      <h1>StorePage</h1>
+      <h1>Produtos</h1>
 
       <div className="searchbar-div">
         <img src={icon_search} alt="" />
