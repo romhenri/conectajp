@@ -15,8 +15,10 @@ section.account-section.account-page {
   top: 300px;
   display: block;
   height: 80%;
+  max-width: 200%;
   padding-top: 16px;
-  padding-bottom: 150px;
+  padding-bottom: 200px;
+  overflow-y: auto;
 }
 
 .account-page .image-box {
@@ -86,4 +88,14 @@ section.account-section.account-page {
   opacity: .6;
   border-top: 1px solid #0000003a;
   border-bottom: none;
+}
+
+.account-section footer a {
+  text-decoration: none;
+  color: #00000096;
+  font-size: .8em;
+}
+
+.account-section footer a:hover {
+  text-decoration: underline;
 }

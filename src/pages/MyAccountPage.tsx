@@ -41,13 +41,18 @@ const MyAccountPage= () => {
     </div>
       <hr />
       <div className="option">Favoritos</div>
-      <div className="option">Reembolsos e Devoluções</div>
       <div className="option">Ajustes</div>
+      <div className="option">Reembolsos e Devoluções</div>
       <hr />
       <div className="option">Central de Ajuda</div>
       <div className="option">Sugestões</div>
       <div className="option">Termos de Uso</div>
       <hr />
+      <footer>
+      {/* <a href="https://www.linkedin.com/in/romulo-henri/" target="_blank" rel="noopener noreferrer">
+				Desenvolvido por Rômulo Henri (2023)
+			</a> */}
+      </footer>
     </section>
   </>)
 }
