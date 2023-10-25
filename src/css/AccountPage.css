@@ -99,3 +99,13 @@ section.account-section.account-page {
 .account-section footer a:hover {
   text-decoration: underline;
 }
+
+.middle-section.account-page .option {
+  border: 1px solid #0000003a;
+  width: 140px;
+  height: 35px;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-top: 25px;
+}

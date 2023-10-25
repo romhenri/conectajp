@@ -21,6 +21,8 @@ const MyAccountPage= () => {
         <div className="review-box">
           <img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={icon_star}/>
         </div>
+
+        <div className='option'>Editar Perfil</div>
       </div>
     </section>
 
