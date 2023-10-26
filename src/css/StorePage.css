@@ -61,7 +61,7 @@ header {
   width: 100px;
   height: 100px;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 10px;
   min-width: 100px;
 }
 
@@ -114,7 +114,11 @@ header {
 }
 
 .review-box img {
-  width: 13px;
+  height: 13px;
+}
+
+.review-box img.half {
+  width: 7px;
 }
 
 /* SCROLL */

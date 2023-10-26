@@ -5,6 +5,7 @@ import genericProduct4 from '../assets/product4.jpg'
 import genericProduct5 from '../assets/product5.jpg'
 import icon_search from '../assets/search-svgrepo-com.svg'
 import icon_star from '../assets/star-30.png'
+import half_icon_star from '../assets/half-star-30.png'
 import '../css/pages.css'
 import '../css/StorePage.css'
 
@@ -20,7 +21,7 @@ const StorePage = () => {
       </div>
     </header>
 
-    <section className='store-section'>
+    <section className='store-page store-section'>
 
       <div className="productCard">
         <div className="image-box">
@@ -31,7 +32,7 @@ const StorePage = () => {
           <p className='desc'>TeenTime</p>
           <div className="review-box">
             <p>
-              <img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={icon_star}/>
+              <img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={icon_star}/>
             </p>
           </div>
           <div className="price-box">
@@ -50,7 +51,7 @@ const StorePage = () => {
           <p className='desc'>TechHouse</p>
           <div className="review-box">
             <p>
-              <img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={icon_star}/>
+              <img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={half_icon_star}/>
             </p>
           </div>
           <div className="price-box">
@@ -88,7 +89,7 @@ const StorePage = () => {
           <p className='desc'>Papelloul</p>
           <div className="review-box">
             <p>
-              <img src={icon_star}/><img src={icon_star}/><img src={icon_star}/>
+              <img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={half_icon_star}/>
             </p>
           </div>
           <div className="price-box">
