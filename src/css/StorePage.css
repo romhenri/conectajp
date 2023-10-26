@@ -62,6 +62,7 @@ header {
   height: 100px;
   overflow: hidden;
   border-radius: 5px;
+  min-width: 100px;
 }
 
 .image-box img {
@@ -77,7 +78,12 @@ header {
 .content-box h2 {
   text-align: start;
   margin-bottom: 3px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; 
+  -webkit-box-orient: vertical;
 }
 
 .content-box p.desc {
