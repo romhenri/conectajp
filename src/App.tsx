@@ -1,7 +1,8 @@
 import Menu from './components/Menu'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import StorePage from './pages/StorePage'
-import MyAccountPage from './pages/AccountPage'
+import AccountPage from './pages/AccountPage'
+import MapPage from './pages/MapPage'
 import './css/pages.css'
 import './App.css'
 
@@ -16,8 +17,8 @@ function App() {
           <Route path='/' element={"ConectaJP"}/>
           <Route path='/loja' element={<StorePage/>}/>
           <Route path='/mais' element={"ConectaJP - Mais"}/>
-          <Route path='/mapa' element={"ConectaJP - Mapa"}/>
-          <Route path='/minha-conta' element={<MyAccountPage/>}/>
+          <Route path='/mapa' element={<MapPage/>}/>
+          <Route path='/minha-conta' element={<AccountPage/>}/>
         </Routes> 
         <Menu/>
       </main>
