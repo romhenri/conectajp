@@ -1,7 +1,7 @@
 import Menu from './components/Menu'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import StorePage from './pages/StorePage'
-import MyAccountPage from './pages/MyAccountPage'
+import MyAccountPage from './pages/AccountPage'
 import './css/pages.css'
 import './App.css'
 

@@ -57,7 +57,7 @@ header {
   padding-bottom: 120px;
 }
 
-.image-box {
+.store-page .image-box {
   width: 100px;
   height: 100px;
   overflow: hidden;
@@ -78,7 +78,7 @@ header {
 .content-box h2 {
   text-align: start;
   margin-bottom: 3px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
