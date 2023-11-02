@@ -51,6 +51,7 @@ section.account-section.account-page {
 
 .account-page .review-box img {
   width: 20px;
+  height: 100%;
 }
 
 .account-section .option {
