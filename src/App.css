@@ -35,8 +35,8 @@ main {
 
   main {
     width: 100%;
-    height: 90%;
-    min-height: 100vh;
+    /* height: 90%; */
+    /* min-height: 100vh; */
     border: 0px solid transparent;
   }
 

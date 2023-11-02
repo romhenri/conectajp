@@ -47,6 +47,15 @@ nav a.active svg {
   fill: #5ad38c;
 }
 
+.navbar {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  touch-action: manipulation;
+}
+
 @media (max-width: 800px) {
   .navbar {
     position: fixed;
