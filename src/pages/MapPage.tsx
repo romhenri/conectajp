@@ -1,12 +1,14 @@
 // import React from 'react'
 
 const MapPage = () => {
-   //@ts-ignore
+  //@ts-ignore
   let map: google.maps.Map;
 
   async function initMap(): Promise<void> {
-    //@ts-ignore
-    const position = { lat: -7.1629958568226155, lng: -34.825555030682175 };
+    const position = {
+      lat: -7.1629958568226155,
+      lng: -34.825555030682175
+    };
 
     //@ts-ignore
     const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary; //@ts-ignore
@@ -20,37 +22,29 @@ const MapPage = () => {
       // icon: iconBase + 'novo_marcador.png',
     });
 
-    //@ts-ignore
-    new google.maps.Marker({
-      map: map,
-      position: position,
-      title: 'ECIT-JP'
-    });
+    const markersPositions = [
+      {lat: -7.1629958568226155, lng: -34.825555030682175},
+      {lat: -7.1929958568226155, lng: -34.825555030682175},
+      {lat: -7.1929958568226155, lng: -34.895555030682175},
+      {lat: -7.1319958568226155, lng: -34.885555030682175}
+    ]
 
-    //@ts-ignore
-    new google.maps.Marker({
-      map: map,
-      position: { lat: -7.1929958568226155, lng: -34.825555030682175 },
-      title: 'ECIT-JP'
-    });
+    makeMarkers(markersPositions)
 
-     //@ts-ignore
-     new google.maps.Marker({
-      map: map,
-      position: { lat: -7.1929958568226155, lng: -34.895555030682175 },
-      title: 'ECIT-JP'
-    });
-
-     //@ts-ignore
-      new google.maps.Marker({
-      map: map,
-      position: { lat: -7.1319958568226155, lng: -34.885555030682175 },
-      title: 'ECIT-JP'
-    });
+    function makeMarkers(positions: Object[]) {
+      for (let i= 0; i < positions.length; i++) {
+        //@ts-ignore
+        new google.maps.Marker(
+          {
+            map: map,
+            position: positions[i],
+          }
+        )
+      }
+    }
   }
 
   initMap();
-
 
   return (
     <>
