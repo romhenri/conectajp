@@ -5,6 +5,17 @@ import '../css/StorePage.css'
 import '../css/AccountPage.css'
 
 const MyAccountPage= () => {
+
+  const showInfo = () => {
+    const box = document.querySelector('.content-box');
+    if (box) box.innerHTML = `
+      innerWidth: ${window.innerWidth}px; <br/>
+      innerHeight: ${window.innerHeight}px; <br/>
+      outerHeight: ${window.outerHeight}px; <br/>
+      outerWidth: ${window.outerWidth}px; <br/>
+    `
+  }
+
   return (<>
     <header className='page-header account-page'>
       <h1>Minha Conta</h1>
@@ -46,7 +57,8 @@ const MyAccountPage= () => {
       <div className="option">Suas Avaliações</div>
       <div className="option">Reembolsos e Devoluções</div>
       <hr />
-      <div className="option">Central de Ajuda</div>
+      <div className="option" onClick={showInfo}>
+        Central de Ajuda</div>
       <div className="option">Sugestões</div>
       <div className="option">Termos de Uso</div>
       <hr />
