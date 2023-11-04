@@ -77,8 +77,9 @@ const StorePage = () => {
 
       {data.map(item => (
         <ProductCard  
-          title={item.name} desc={item.desc}
+          title={item.name} desc={item.store.name}
           image={images[item.id]} price={item.price}
+          stars={item.stars}
         />
       ))}
 

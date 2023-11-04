@@ -40,7 +40,12 @@ const ProductCard: React.FC<ProductCardProps> =
                 <span>{prevPrice}</span>
               )}
               
-            <p className="price">R$ {price}</p>
+            <p className="price">{
+              price.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL"
+              })}
+            </p>
           </div>
         </div>
       </div>

@@ -1,33 +1,36 @@
 [
   {
     "id": 1,
-    "name": "Bronzing Paraffin Morena Jambo Carrot and Annatto SPF 6 100g",
-    "desc": "Paraffin for achieving a bronze tan with Carrot and Annatto extracts. SPF 6 protection. 100g.",
+    "name": "Parafina Bronzeadora Morena Jambo Cenoura e Urucum FPS 6 100g",
+    "desc": "Parafina para conquistar um bronzeado com extratos de cenoura e urucum. Proteção FPS 6. 100g.",
     "price": 21.99,
+    "stars": 4.5,
     "store": {
-      "name": "Cleide Cosmetics",
+      "name": "Cleide Cosméticos",
       "address": "R. Renato Gomes de Oliveira, 17 - Mangabeira 7, João Pessoa - PB, 58077-360",
       "phone": "(83) 98752-6242"
     }
   },
   {
     "id": 2,
-    "name": "Dinosaur Plush for Pets",
-    "desc": "Adorable plush dinosaur toy designed for pets.",
+    "name": "Pelúcia de dinossauro para pets",
+    "desc": "Adorável brinquedo de pelúcia em forma de dinossauro projetado para animais de estimação.",
     "price": 25.00,
+    "stars": 4.2,
     "store": {
-      "name": "Pet Aesthetics",
-      "address": "R. Administrator Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 and 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Pet Estética",
+      "address": "R. Administrador Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 e 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 98891-2837"
     }
   },
   {
     "id": 3,
-    "name": "Vita Capili Kit Shampoo+Conditioner with Bamboo and Argan Oil Muriel 310Ml",
-    "desc": "Hair care kit including shampoo and conditioner with Bamboo and Argan Oil extracts. 310ml.",
+    "name": "Kit Vita Capili Shampoo+Condicionador de Bambu e Óleo de Argan Muriel 310Ml",
+    "desc": "Kit de cuidados capilares incluindo shampoo e condicionador com extratos de bambu e óleo de argan. 310ml.",
     "price": 20.99,
+    "stars": 4.7,
     "store": {
-      "name": "Cleide Cosmetics",
+      "name": "Cleide Cosméticos",
       "address": "R. Renato Gomes de Oliveira, 17 - Mangabeira 7, João Pessoa - PB, 58077-360",
       "phone": "(83) 98752-6242"
     }
@@ -35,151 +38,165 @@
   {
     "id": 4,
     "name": "Granola Diet 250g",
-    "desc": "Healthy and delicious diet granola. 250g.",
+    "desc": "Granola dietética saudável e deliciosa. 250g.",
     "price": 27.00,
+    "stars": 4.3,
     "store": {
-      "name": "Naturalles & Health",
-      "address": "R. Administrator Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Naturalles & Saúde",
+      "address": "R. Administrador Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 99400-3418"
     }
   },
   {
     "id": 5,
-    "name": "Fine Herbs Seasoning 100g",
-    "desc": "Flavorful herb seasoning for your dishes. 100g.",
+    "name": "Tempero Ervas Finas 100g",
+    "desc": "Tempero de ervas saboroso para seus pratos. 100g.",
     "price": 13.00,
+    "stars": 4.0,
     "store": {
-      "name": "Naturalles & Health",
-      "address": "R. Administrator Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Naturalles & Saúde",
+      "address": "R. Administrador Manoel Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 99400-3418"
     }
   },
   {
     "id": 6,
-    "name": "100% Natural Stonebreaker Herb",
-    "desc": "Natural Stonebreaker herb for various uses. 100% natural.",
+    "name": "Erva Quebra Pedra 100% Natural",
+    "desc": "Erva Quebra Pedra 100% natural para diversos usos.",
     "price": 10.00,
+    "stars": 4.6,
     "store": {
-      "name": "Naturalles & Health",
-      "address": "R. Administrator Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Naturalles & Saúde",
+      "address": "R. Administrador Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 99400-3418"
     }
   },
   {
     "id": 7,
-    "name": "Reumatex Natural Sugar-Free Anti-Inflammatory 500ml",
-    "desc": "Natural and sugar-free anti-inflammatory solution. 500ml.",
+    "name": "Reumatex Anti-Inflamatório Natural Zero Açúcar 500ml",
+    "desc": "Solução anti-inflamatória natural e sem açúcar. 500ml.",
     "price": 18.00,
+    "stars": 4.8,
     "store": {
-      "name": "Naturalles & Health",
-      "address": "R. Administrator Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Naturalles & Saúde",
+      "address": "R. Administrador Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 99400-3418"
     }
   },
   {
     "id": 8,
-    "name": "Orange Flavored Vitamin and Mineral Syrup 250ml",
-    "desc": "Delicious orange flavored vitamin and mineral syrup. 250ml.",
+    "name": "Xaropinho Vitamínico e Mineral sabor laranja 250ml",
+    "desc": "Delicioso xarope vitamínico e mineral com sabor de laranja. 250ml.",
     "price": 35.00,
+    "stars": 4.4,
     "store": {
-      "name": "Naturalles & Health",
-      "address": "R. Administrator Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Naturalles & Saúde",
+      "address": "R. Administrador Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 99400-3418"
     }
   },
   {
     "id": 9,
-    "name": "FERRIX (Children's Iron) 30ml - Flora Nativa Flavor: Strawberry 30ml",
-    "desc": "Iron supplement for children with a delicious strawberry flavor. 30ml.",
+    "name": "FERRIX (Ferro infantil) 30ml - Flora Nativa Sabor: Morango 30ml",
+    "desc": "Suplemento de ferro para crianças com um delicioso sabor de morango. 30ml.",
     "price": 38.00,
+    "stars": 4.4,
     "store": {
-      "name": "Naturalles & Health",
-      "address": "R. Administrator Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Naturalles & Saúde",
+      "address": "R. Administrador Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 99400-3418"
     }
   },
   {
     "id": 10,
-    "name": "Magnesium Dimalate 400mg | 60 Capsules | União Flora 590mg",
-    "desc": "Magnesium supplement with 400mg per capsule. 60 capsules per bottle. União Flora brand. 590mg total.",
+    "name": "Magnésio Dimalato 400mg | 60 Cápsulas | União Flora 590mg",
+    "desc": "Suplemento de magnésio com 400mg por cápsula. 60 cápsulas por frasco. Marca União Flora. 590mg no total.",
     "price": 30.00,
+    "stars": 4.6,
     "store": {
-      "name": "Naturalles & Health",
-      "address": "R. Administrator Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Naturalles & Saúde",
+      "address": "R. Administrador Manoel Ângelo, 53 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 99400-3418"
     }
   },
   {
     "id": 11,
-    "name": "Pet Ball",
-    "desc": "Fun and interactive ball toy for pets.",
+    "name": "Bolinha para pets",
+    "desc": "Brinquedo de bola divertido e interativo para animais de estimação.",
     "price": 12.00,
+    "stars": 4.2,
     "store": {
-      "name": "Pet Aesthetics",
-      "address": "R. Administrator Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 and 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Pet Estética",
+      "address": "R. Administrador Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 e 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 98891-2837"
     }
   },
   {
     "id": 12,
-    "name": "Golden Formula Salmon and Rice Flavor Dog Food for Small Adult Dogs 15kg",
-    "desc": "High-quality dog food with salmon and rice flavor. Suitable for small adult dogs. 15kg bag.",
+    "name": "Ração Golden Fórmula sabor Salmão e Arroz para cães de porte pequeno adultos 15kg",
+    "desc": "Ração de alta qualidade com sabor de salmão e arroz para cães de porte pequeno adultos. Saco de 15kg.",
     "price": 119.00,
+    "stars": 4.7,
     "store": {
-      "name": "Pet Aesthetics",
-      "address": "R. Administrator Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 and 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Pet Estética",
+      "address": "R. Administrador Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 e 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 98891-2837"
     }
   },
   {
     "id": 13,
-    "name": "Retractable Leash for Dogs and Cats - 5 meters",
-    "desc": "Convenient and safe retractable leash for dogs and cats. Extends up to 5 meters.",
+    "name": "Coleira Guia Retrátil Para Cachorros E Gatos 5 metros",
+    "desc": "Coleira guia retrátil conveniente e segura para cachorros e gatos. Extende-se até 5 metros.",
     "price": 29.00,
+    "stars": 4.3,
     "store": {
-      "name": "Pet Aesthetics",
-      "address": "R. Administrator Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 and 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Pet Estética",
+      "address": "R. Administrador Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 e 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 98891-2837"
     }
   },
   {
     "id": 14,
-    "name": "Dreamies Salmon Flavored Cat Treats - 40g",
-    "desc": "Delicious salmon-flavored cat treats. 40g pack.",
+    "name": "Petisco Dreamies sabor Salmão 40g",
+    "desc": "Deliciosos petiscos com sabor de salmão para gatos. Embalagem de 40g.",
     "price": 7.00,
+    "stars": 4.0,
     "store": {
-      "name": "Pet Aesthetics",
-      "address": "R. Administrator Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 and 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Pet Estética",
+      "address": "R. Administrador Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 e 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 98891-2837"
     }
   },
   {
     "id": 15,
-    "name": "Pet Clean Shampoo and Conditioner for Dogs - pH Neutral - 700ml",
-    "desc": "Shampoo and conditioner set for dogs with a pH-neutral formula. 700ml.",
+    "name": "Shampoo e Condicionador Pet Clean para cachorros Ph Neutro 700ml",
+    "desc": "Conjunto de shampoo e condicionador para cachorros com fórmula pH neutra. 700ml.",
     "price": 17.00,
+    "stars": 4.8,
     "store": {
-      "name": "Pet Aesthetics",
-      "address": "R. Administrator Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 and 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Pet Estética",
+      "address": "R. Administrador Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 e 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 98891-2837"
     }
   },
   {
     "id": 16,
-    "name": "Pet Clean Dental Cream for Dogs and Cats - 60g",
-    "desc": "Dental cream for dogs and cats to maintain oral hygiene. 60g tube.",
+    "name": "Creme Dental Pet Clean para Cães e Gatos 60g",
+    "desc": "Creme dental para cães e gatos para manter a higiene oral. Tubo de 60g.",
     "price": 18.99,
+    "stars": 4.5,
     "store": {
-      "name": "Pet Aesthetics",
-      "address": "R. Administrator Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 and 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
+      "name": "Pet Estética",
+      "address": "R. Administrador Manoel Ângelo de Oliveira, s/n - Bl L3, Box 01 e 02 - Mangabeira 7, João Pessoa - PB, 58058-200",
       "phone": "(83) 98891-2837"
     }
   },
   {
     "id": 17,
-    "name": "Metal Parts Lubricant Spray",
-    "desc": "Lubricant spray for metal parts and components. Ideal for bicycles.",
+    "name": "Spray Lubrificante para Peças Metálicas",
+    "desc": "Spray lubrificante para peças metálicas e componentes. Ideal para bicicletas.",
     "price": 18.00,
+    "stars": 4.5,
     "store": {
       "name": "Damião Bike",
       "address": "R. Administrator Manoel Ângelo de Oliveira, 364 - Mangabeira 7, João Pessoa - PB, 58058-200",
@@ -188,9 +205,10 @@
   },
   {
     "id": 18,
-    "name": "Bicycle Saddle",
-    "desc": "Comfortable and durable bicycle saddle. Suitable for various bike models.",
+    "name": "Selim para Bicicleta",
+    "desc": "Selim confortável e durável para bicicletas. Adequado para vários modelos de bicicleta.",
     "price": 15.00,
+    "stars": 4.4,
     "store": {
       "name": "Damião Bike",
       "address": "R. Administrator Manoel Ângelo de Oliveira, 364 - Mangabeira 7, João Pessoa - PB, 58058-200",
@@ -199,9 +217,10 @@
   },
   {
     "id": 19,
-    "name": "Thermal Bottle for Cyclists",
-    "desc": "High-quality thermal bottle designed for cyclists to keep drinks at the right temperature.",
+    "name": "Garrafa Térmica para Ciclistas",
+    "desc": "Garrafa térmica de alta qualidade projetada para ciclistas para manter as bebidas na temperatura certa.",
     "price": 48.00,
+    "stars": 4.6,
     "store": {
       "name": "Damião Bike",
       "address": "R. Administrator Manoel Ângelo de Oliveira, 364 - Mangabeira 7, João Pessoa - PB, 58058-200",
@@ -210,9 +229,10 @@
   },
   {
     "id": 20,
-    "name": "Devorak Cycling Gloves",
-    "desc": "High-quality cycling gloves designed for comfort and performance.",
+    "name": "Luvas de Ciclismo Devorak",
+    "desc": "Luvas de ciclismo de alta qualidade projetadas para conforto e desempenho.",
     "price": 45.00,
+    "stars": 4.3,
     "store": {
       "name": "Damião Bike",
       "address": "R. Administrator Manoel Ângelo de Oliveira, 364 - Mangabeira 7, João Pessoa - PB, 58058-200",
@@ -221,42 +241,46 @@
   },
   {
     "id": 21,
-    "name": "Care Liss 300g Chamomile Bleaching Powder",
-    "desc": "Quality bleaching powder with chamomile extract. 300g container.",
+    "name": "Pó Descolorante Care Liss 300g Camomila",
+    "desc": "Pó descolorante de qualidade com extrato de camomila. Embalagem de 300g.",
     "price": 24.99,
+    "stars": 4.7,
     "store": {
-      "name": "Cleide Cosmetics",
+      "name": "Cleide Cosméticos",
       "address": "R. Renato Gomes de Oliveira, 17 - Mangabeira, João Pessoa - PB, 58077-360",
       "phone": "(83) 98752-6242"
     }
   },
   {
     "id": 22,
-    "name": "Maxton 7.0 Natural Blonde Hair Dye",
-    "desc": "Natural blonde hair dye in shade 7.0. Perfect for a new look.",
+    "name": "Tintura Maxton Cor Louro Natural 7.0",
+    "desc": "Tintura de cabelo loiro natural na tonalidade 7.0. Perfeita para um novo visual.",
     "price": 12.89,
+    "stars": 4.6,
     "store": {
-      "name": "Cleide Cosmetics",
+      "name": "Cleide Cosméticos",
       "address": "R. Renato Gomes de Oliveira, 17 - Mangabeira, João Pessoa - PB, 58077-360",
       "phone": "(83) 98752-6242"
     }
   },
   {
     "id": 23,
-    "name": "Márcia Max 40 Vol Hydrogen Peroxide - 70ml",
-    "desc": "High-quality hydrogen peroxide with 40 volumes. 70ml bottle.",
+    "name": "Água Oxigenada Márcia Max 40 vols - 70ml",
+    "desc": "Água oxigenada de alta qualidade com 40 volumes. Frasco de 70ml.",
     "price": 2.99,
+    "stars": 4.2,
     "store": {
-      "name": "Cleide Cosmetics",
+      "name": "Cleide Cosméticos",
       "address": "R. Renato Gomes de Oliveira, 17 - Mangabeira 7, João Pessoa - PB, 58077-360",
       "phone": "(83) 98752-6242"
     }
   },
   {
     "id": 24,
-    "name": "EuroRoma Colorful N.6 600g Cotton Yarn",
-    "desc": "Colorful and eco-friendly cotton yarn. 600g skein.",
+    "name": "Barbante EuroRoma Colorido N.6 600g",
+    "desc": "Barbante colorido e ecológico de algodão. Carretel de 600g.",
     "price": 22.00,
+    "stars": 4.4,
     "store": {
       "name": "Renato Gomes de Oliveira",
       "address": "R. Renato Gomes de Oliveira, 123 - Mangabeira 7, João Pessoa - PB, 58058-232",
@@ -265,9 +289,10 @@
   },
   {
     "id": 25,
-    "name": "Círculo Liza Fina 500m Fine Thread",
-    "desc": "High-quality fine thread with 500m length. Perfect for various sewing projects.",
+    "name": "Linha Liza Fina Círculo 500m",
+    "desc": "Linha fina de alta qualidade com 500m de comprimento. Perfeita para vários projetos de costura.",
     "price": 18.00,
+    "stars": 4.5,
     "store": {
       "name": "Renato Gomes de Oliveira",
       "address": "R. Renato Gomes de Oliveira, 123 - Mangabeira 7, João Pessoa - PB, 58058-232",
