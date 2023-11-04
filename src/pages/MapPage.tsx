@@ -1,4 +1,4 @@
-// import React from 'react'
+import '../css/MapPage.css'
 
 const MapPage = () => {
   //@ts-ignore
@@ -47,14 +47,17 @@ const MapPage = () => {
   initMap();
 
   return (
-    <>
-      <header className='page-header account-page'>
+    <div className="map-page">
+      <header className='page-header'>
         <h1>Mapa</h1>
       </header>
       <section className="map-section">
         <div id="map"></div>
       </section>
-    </>
+      <div className='aux'>
+        [Menu]
+      </div>
+    </div>
   )
 }
 

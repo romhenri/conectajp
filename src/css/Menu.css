@@ -7,6 +7,9 @@
   z-index: 999;
   box-shadow: rgba(36, 36, 39, 0.6) 0px 7px 12px 0px;
   position: absolute;
+  
+  /* Debug */
+  /* opacity: 0;  */
 }
 
 .navbar nav {

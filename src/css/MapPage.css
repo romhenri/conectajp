@@ -1,0 +1,36 @@
+.map-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-page .page-header {
+  height: 100px;
+
+  position: static;
+}
+
+.map-page .map-section {
+  flex-grow: 1;
+  height: 100vh;
+  height: calc(100vh - 70px - 100px);
+
+  overflow: hidden;
+  position: static;
+  padding: 0px;
+  border-radius: 0px;
+
+  /* Debug */
+  /* border: 2px solid blue; */
+}
+
+#map {
+ height: 100%;
+}
+
+.map-page .aux {
+  height: 70px;
+  width: 100%;
+
+  /* Debug */
+  /* border: 2px solid red; */
+}
