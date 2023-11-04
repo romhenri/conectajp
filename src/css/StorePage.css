@@ -67,6 +67,8 @@ header {
 
 .image-box img {
   height: 100%;
+  filter: brightness(120%);
+  scale: 1;
 }
 
 .content-box {
@@ -86,9 +88,15 @@ header {
   -webkit-box-orient: vertical;
 }
 
-.content-box p.desc {
+.content-box .desc {
   text-align: start;
   opacity: .7;
+  display: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; 
+  -webkit-box-orient: vertical;
 }
 
 .price-box {
@@ -115,6 +123,7 @@ header {
 
 .review-box img {
   height: 13px;
+  margin-right: 5px;
 }
 
 .review-box img.half {
