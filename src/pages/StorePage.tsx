@@ -1,4 +1,5 @@
 import icon_search from '../assets/search-svgrepo-com.svg'
+import SearchBar from '../components/SearchBar'
 import ProductCard from '../components/ProductCard'
 import '../css/pages.css'
 import '../css/StorePage.css'
@@ -68,8 +69,7 @@ const StorePage = () => {
 
       <div className="searchbar-div">
         <img src={icon_search} alt="" />
-        <input type="text" name="searchBar" id="searchBar" 
-        placeholder='Pesquisa...'/>
+        <SearchBar />
       </div>
     </header>
 
@@ -79,7 +79,7 @@ const StorePage = () => {
         <ProductCard  
           title={item.name} desc={item.store.name}
           image={images[item.id]} price={item.price}
-          stars={item.stars}
+          stars={item.stars} key={item.id}
         />
       ))}
 

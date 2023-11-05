@@ -30,6 +30,10 @@ main {
   background: linear-gradient(90deg, rgba(148,186,254,1) 0%, rgba(142,249,167,1) 100%);
 }
 
+.hidden {
+  display: none;
+}
+
 @media (max-width: 800px) {
   body {margin-top: 0px !important;}
 

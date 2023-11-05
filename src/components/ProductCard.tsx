@@ -17,7 +17,7 @@ const ProductCard: React.FC<ProductCardProps> =
       desc = "",
       prevPrice = null,
       price,
-      stars = 0,
+      stars = 0
     }
   ) => {
     return (
