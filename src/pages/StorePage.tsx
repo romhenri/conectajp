@@ -64,7 +64,7 @@ const images = [
 
 const StorePage = () => {
   return (
-    <main>
+    <main className='store-page'>
       <header className='page-header'>
         <h1>Produtos</h1>
 
@@ -74,7 +74,7 @@ const StorePage = () => {
         </div>
       </header>
 
-      <section className='store-page store-section'>
+      <section className='store-section'>
 
         {data.map(item => (
           <ProductCard  

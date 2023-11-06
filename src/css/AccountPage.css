@@ -1,9 +1,8 @@
-header.page-header.account-page {
+.account-page header.page-header {
   height: 100px !important;
 }
 
-.middle-section.account-page {
-  top: 110px;
+.account-page .middle-section {
   height: 180px;
   display: flex;
   align-items: center;
@@ -11,13 +10,12 @@ header.page-header.account-page {
   background-color: rgba(240, 248, 255, 0.85);
 }
 
-section.account-section.account-page {
-  top: 300px;
+.account-page section.account-section {
   display: block;
   height: 80%;
   max-width: 200%;
   padding-top: 16px;
-  padding-bottom: 200px;
+  padding-bottom: 20px;
   overflow-y: auto;
 }
 
