@@ -3,7 +3,6 @@
   height: 70px;
   background-color: aliceblue;
 
-  bottom: 0px;
   z-index: 999;
   box-shadow: rgba(36, 36, 39, 0.6) 0px 7px 12px 0px;
   position: absolute;
@@ -12,14 +11,14 @@
   /* opacity: 0;  */
 }
 
-.navbar nav {
+nav.navbar {
   display: flex;
   justify-content: space-around;
 
   padding: 8px 20px 15px;
 }
 
-.navbar nav a {
+nav.navbar a {
   width: 52px;
   height: 52px;
   border-radius: 30%;
@@ -29,7 +28,7 @@
   text-decoration: none;
 }
 
-.navbar nav a.active {
+nav.navbar a.active {
   color: aliceblue;
   background-color: #2873b1;
   transition: .2s;
@@ -57,10 +56,4 @@ nav a.active svg {
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
   touch-action: manipulation;
-}
-
-@media (max-width: 800px) {
-  .navbar {
-    position: fixed;
-  }
 }

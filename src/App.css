@@ -15,7 +15,7 @@ body {
   box-sizing: border-box;
 }
 
-main {
+#root {
   border: 2px solid rgb(0, 0, 0);
   width: 500px;
   height: 900px;
@@ -30,6 +30,12 @@ main {
   background: linear-gradient(90deg, rgba(148,186,254,1) 0%, rgba(142,249,167,1) 100%);
 }
 
+main {
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100% - 70px);
+}
+
 .hidden {
   display: none;
 }
@@ -37,9 +43,8 @@ main {
 @media (max-width: 800px) {
   body {margin-top: 0px !important;}
 
-  main {
+  #root {
     width: 100%;
-    /* height: 90%; */
     height: 100vh;
     max-height: 100vh;
     border: 0px solid transparent;

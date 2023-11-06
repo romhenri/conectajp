@@ -16,7 +16,7 @@ const MyAccountPage= () => {
     `
   }
 
-  return (<>
+  return (<main>
     <header className='page-header account-page'>
       <h1>Minha Conta</h1>
     </header>
@@ -68,7 +68,7 @@ const MyAccountPage= () => {
 			</a> */}
       </footer>
     </section>
-  </>)
+  </main>)
 }
 
 export default MyAccountPage

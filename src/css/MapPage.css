@@ -10,9 +10,7 @@
 }
 
 .map-page .map-section {
-  flex-grow: 1;
-  height: 100vh;
-  height: calc(100vh - 70px - 100px);
+  height: 100%;
 
   overflow: hidden;
   position: static;
