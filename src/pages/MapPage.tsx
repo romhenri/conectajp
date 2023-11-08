@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import '../css/pages.css'
 import '../css/MapPage.css'
 
 const MapPage = () => {

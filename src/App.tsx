@@ -5,7 +5,6 @@ import StorePage from './pages/StorePage'
 import AccountPage from './pages/AccountPage'
 import MapPage from './pages/MapPage'
 import './scripts/getClientInfo.js'
-import './css/Pages.css'
 import './App.css'
 
 function App() {

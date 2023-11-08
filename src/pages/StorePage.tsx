@@ -1,7 +1,7 @@
 import icon_search from '../assets/search-svgrepo-com.svg'
 import SearchBar from '../components/SearchBar'
 import ProductCard from '../components/ProductCard'
-import '../css/Pages.css'
+import '../css/pages.css'
 import '../css/StorePage.css'
 
 import data from '../products.json';

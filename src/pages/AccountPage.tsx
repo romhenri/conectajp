@@ -1,6 +1,6 @@
 import DefaultProfile from '../assets/default-profile.png'
 import icon_star from '../assets/star-30.png'
-import '../css/Pages.css'
+import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
 

@@ -1,5 +1,5 @@
+import '../css/pages.css'
 import '../css/HomePages.css'
-import '../css/Pages.css'
 
 const HomePage = () => {
 
