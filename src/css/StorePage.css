@@ -1,28 +1,21 @@
 /* Header */
 
 .store-page header {
+  height: 140px;
+
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
 
-  position: sticky;
-  top: 0px;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 12px;
+  gap: 15px;
 }
  
 .searchbar-div {
   position: relative;
   display: flex;
-  flex-grow: 1;
-}
-
-.searchbar-div img{
-  position: absolute;
-  right: 35px;
-  top: 19px;
-
-  opacity: .6;
-  
-  width: 25px;
+  width: 100%;
 }
 
 #searchBar {
@@ -31,8 +24,23 @@
   border-radius: 10px;
   background-color: rgba(240, 248, 255, 0.65);
   border: 1px solid #0000003a;
-  padding: 0px 15px 0px 20px;
-  margin:  10px 15px 10px 15px;
+  padding: 0px 10px 0px 45px;
+  margin: 0px 30px;
+}
+
+.searchbar-div img{
+  position: absolute;
+  left: 40px;
+  top: 9px;
+
+  opacity: .6;
+  
+  width: 25px;
+
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 #searchBar:focus {
@@ -56,8 +64,8 @@
   height: 80%;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  padding-top: 16px;
-  padding-bottom: 120px;
+  padding-top: 12px;
+  padding-bottom: 80px;
 }
 
 .store-page .image-box {

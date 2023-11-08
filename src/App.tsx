@@ -4,7 +4,8 @@ import HomePage from './pages/HomePage'
 import StorePage from './pages/StorePage'
 import AccountPage from './pages/AccountPage'
 import MapPage from './pages/MapPage'
-import './css/pages.css'
+import './scripts/getClientInfo.js'
+import './css/Pages.css'
 import './App.css'
 
 function App() {
@@ -21,11 +22,6 @@ function App() {
           <Route path='/minha-conta' element={<AccountPage/>}/>
         </Routes>
         <Menu/>
-        <footer>
-          <a href="https://www.linkedin.com/in/romulo-henri/" target="_blank" rel="noopener noreferrer">
-            Desenvolvido por Rômulo Henri (2023)
-          </a>
-        </footer>
       </Router>
     </>
   )
