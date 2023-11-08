@@ -1,5 +1,6 @@
 import Menu from './components/Menu'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import HomePage from './pages/HomePage'
 import StorePage from './pages/StorePage'
 import AccountPage from './pages/AccountPage'
 import MapPage from './pages/MapPage'
@@ -13,9 +14,7 @@ function App() {
     <>
      <Router>
         <Routes>
-          <Route path='/' element={
-          <main>Início</main>
-          }/>
+          <Route path='/' element={<HomePage/>}/>
           <Route path='/loja' element={<StorePage/>}/>
           <Route path='/mais' element={"ConectaJP - Mais"}/>
           <Route path='/mapa' element={<MapPage/>}/>
