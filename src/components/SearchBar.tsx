@@ -4,7 +4,7 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("")
 
   function initSearchBar() {
-    const searchBar: HTMLInputElement | null = document.querySelector('#searchBar')
+    const searchBar: HTMLInputElement | null = document.querySelector('#searchBar');
     if (!searchBar) {
       console.error("searchBar=", searchBar);
       return
