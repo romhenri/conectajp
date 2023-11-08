@@ -1,10 +1,13 @@
+/* Header */
+
 .account-page header.page-header {
-  height: 100px !important;
+  height: 100px;
 }
 
 .account-page .middle-section {
-  top: 110px;
-  height: 180px;
+  height: 150px;
+  box-sizing: border-box;
+  position: static;
   display: flex;
   align-items: center;
   padding: 10px 25px;
@@ -12,8 +15,10 @@
 }
 
 .account-page section.account-section {
-  top: 300px;
+  position: absolute;
+  overflow-y: scroll;
   display: block;
+  /* display: none; */
   height: 80%;
   max-width: 100%;
   padding-top: 16px;
@@ -21,36 +26,47 @@
 }
 
 .account-page .image-box {
-  width: 120px;
+  width: 100px;
 }
 
 .account-page .image-box img {
   width: 100%;
   height: 100%;
-  max-height: 1005;
+  max-height: 100%;
   border-radius: 50%;
 }
 
-
 .account-page .content-box h2 {
-  font-size: 1.5em;
+  font-size: 1.43em;
 }
 
 .account-page .content-box {
   box-sizing: border-box;
-  padding: 25px 25px;
+  padding: 10px 20px;
   height: 100%;
 }
 
 .account-page .review-box {
   position: initial;
   display: flex;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .account-page .review-box img {
   width: 20px;
   height: 100%;
+}
+
+.account-page .middle-section .option {
+  border: 1px solid #0000003a;
+  width: 140px;
+  height: 30px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .account-section .option {
@@ -105,16 +121,6 @@
 
 .account-section footer a:hover {
   text-decoration: underline;
-}
-
-.account-page .middle-section .option {
-  border: 1px solid #0000003a;
-  width: 140px;
-  height: 35px;
-  border-radius: 5px;
-  padding: 5px;
-  box-sizing: border-box;
-  margin-top: 25px;
 }
 
 @media (max-width: 500px) {
