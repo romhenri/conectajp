@@ -47,7 +47,7 @@ const MapPage = () => {
   initMap();
 
   return (
-    <div className="map-page">
+    <main className="map-page">
       <header className='page-header'>
         <h1>Mapa</h1>
       </header>
@@ -57,7 +57,7 @@ const MapPage = () => {
       <div className='aux'>
         [Menu]
       </div>
-    </div>
+    </main>
   )
 }
 

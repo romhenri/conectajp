@@ -1,9 +1,12 @@
 /* Header */
 
-header {
+.store-page header {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+
+  position: sticky;
+  top: 0px;
 }
  
 .searchbar-div {

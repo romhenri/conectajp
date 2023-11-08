@@ -1,8 +1,8 @@
-header.page-header.account-page {
+.account-page header.page-header {
   height: 100px !important;
 }
 
-.middle-section.account-page {
+.account-page .middle-section {
   top: 110px;
   height: 180px;
   display: flex;
@@ -11,14 +11,13 @@ header.page-header.account-page {
   background-color: rgba(240, 248, 255, 0.85);
 }
 
-section.account-section.account-page {
+.account-page section.account-section {
   top: 300px;
   display: block;
   height: 80%;
-  max-width: 200%;
+  max-width: 100%;
   padding-top: 16px;
   padding-bottom: 200px;
-  overflow-y: auto;
 }
 
 .account-page .image-box {
@@ -108,7 +107,7 @@ section.account-section.account-page {
   text-decoration: underline;
 }
 
-.middle-section.account-page .option {
+.account-page .middle-section .option {
   border: 1px solid #0000003a;
   width: 140px;
   height: 35px;
