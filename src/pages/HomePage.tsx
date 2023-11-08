@@ -1,3 +1,5 @@
+import '../css/pages.css'
+
 const HomePage = () => {
 
   const Debug = () => {
@@ -18,11 +20,11 @@ const HomePage = () => {
   }
 
   return (
-    <main>
+    <main className='home-page'>
       <header className='page-header'>
         <h1>ConectaJP</h1>
       </header>
-      <button onClick={Debug}>Debug</button>
+      <button onClick={Debug} >Debug</button>
       <section className="home-section">
 
       </section>

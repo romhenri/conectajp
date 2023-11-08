@@ -54,6 +54,9 @@ const MapPage = () => {
       <section className="map-section">
         <div id="map"></div>
       </section>
+      <div className='aux'>
+        [Menu]
+      </div>
     </main>
   )
 }

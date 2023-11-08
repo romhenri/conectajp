@@ -10,13 +10,15 @@
 }
 
 .map-page .map-section {
-  height: 100%;
+  flex-grow: 1;
+  height: 100vh;
+  height: calc(100vh - 70px - 100px);
 
   overflow: hidden;
   position: static;
   padding: 0px;
   border-radius: 0px;
-  margin-top: 0px;
+  margin: 0px;
 
   /* Debug */
   /* border: 2px solid blue; */

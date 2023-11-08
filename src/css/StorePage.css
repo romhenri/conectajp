@@ -1,26 +1,14 @@
 /* Header */
 
-header {
+.store-page header {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+
+  position: sticky;
+  top: 0px;
 }
  
-.store-page .store-section {
-  height: initial;
-  display: block; 
-  /* display: none; */
-  height: 8000px;
-  max-height: 8000px;
-  width: 100%;
-
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  padding-top: 16px;
-  padding-bottom: 10px;
-  
-}
-
 .searchbar-div {
   position: relative;
   display: flex;
@@ -61,6 +49,15 @@ header {
   margin-bottom: 6px;
 
   display: flex;
+}
+
+.store-section {
+  display: block;
+  height: 80%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding-top: 16px;
+  padding-bottom: 120px;
 }
 
 .store-page .image-box {
@@ -141,11 +138,9 @@ header {
 .store-section::-webkit-scrollbar,
 .account-section::-webkit-scrollbar {
   display: none;
-  /* width: 20px; */
 }
 .store-section::-webkit-scrollbar-track {
 	background: #1b1a1a;
-  width: 50px;
 }
 .store-section::-webkit-scrollbar-thumb html,
 .account-section::-webkit-scrollbar-thumb html {

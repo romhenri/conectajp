@@ -19,8 +19,13 @@ function App() {
           <Route path='/mais' element={"ConectaJP - Mais"}/>
           <Route path='/mapa' element={<MapPage/>}/>
           <Route path='/minha-conta' element={<AccountPage/>}/>
-        </Routes> 
+        </Routes>
         <Menu/>
+        <footer>
+          <a href="https://www.linkedin.com/in/romulo-henri/" target="_blank" rel="noopener noreferrer">
+            Desenvolvido por Rômulo Henri (2023)
+          </a>
+        </footer>
       </Router>
     </>
   )

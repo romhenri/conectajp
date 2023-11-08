@@ -64,27 +64,27 @@ const images = [
 
 const StorePage = () => {
   return (
-    <main className='store-page'>
-      <header className='page-header'>
-        <h1>Produtos</h1>
+  <main className='store-page'>
+    <header className='page-header'>
+      <h1>Produtos</h1>
 
-        <div className="searchbar-div">
-          <img src={icon_search} alt="" />
-          <SearchBar />
-        </div>
-      </header>
+      <div className="searchbar-div">
+        <img src={icon_search} alt="" />
+        <SearchBar />
+      </div>
+    </header>
 
-      <section className='store-section'>
+    <section className='store-section'>
 
-        {data.map(item => (
-          <ProductCard  
-            title={item.name} desc={item.store.name}
-            image={images[item.id]} price={item.price}
-            stars={item.stars} key={item.id}
-          />
-        ))}
+      {data.map(item => (
+        <ProductCard  
+          title={item.name} desc={item.store.name}
+          image={images[item.id]} price={item.price}
+          stars={item.stars} key={item.id}
+        />
+      ))}
 
-      </section>
+    </section>
   </main>)
 }
 

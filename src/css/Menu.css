@@ -1,12 +1,23 @@
 nav.navbar {
+  width: 100%;
   height: 70px;
   background-color: aliceblue;
-  box-shadow: rgba(36, 36, 39, 0.6) 0px 7px 12px 0px;
+  box-sizing: border-box;
 
+  bottom: 0px;
+  z-index: 999;
+  box-shadow: rgba(36, 36, 39, 0.6) 0px 7px 12px 0px;
+  position: absolute;
+
+  /* Debug */
+  /* opacity: 0;  */
+}
+
+nav.navbar {
   display: flex;
   justify-content: space-around;
 
-  padding: 8px 20px;
+  padding: 8px 20px 15px 20px;
 }
 
 nav.navbar a {
@@ -47,4 +58,11 @@ nav a.active svg {
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
   touch-action: manipulation;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    position: fixed;
+    bottom: 0px;
+  }
 }
