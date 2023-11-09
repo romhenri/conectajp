@@ -1,33 +1,40 @@
 import '../css/pages.css'
 import '../css/HomePages.css'
 
-const HomePage = () => {
+interface HomePageProps {
+  images: string[]
+}
 
-  const Debug = () => {
-    const section = document.querySelector('.home-section')
-    if (!section) return
-    section.innerHTML = `
-      innerWidth: ${window.innerWidth}px; <br/>
-      innerHeight: ${window.innerHeight}px; <br/>
-      outerHeight: ${window.outerHeight}px; <br/>
-      outerWidth: ${window.outerWidth}px; <br/><br/>
+const HomePage: React.FC<HomePageProps> = 
+  (
+    {
+      images
+    }
+  ) => {
 
-      main width: ${document.querySelector('main')?.clientWidth}px <br/>
-      main height: ${document.querySelector('main')?.clientHeight}px <br/><br/>
-
-      #root width: ${document.querySelector('#root')?.clientWidth}px <br/>
-      #root height: ${document.querySelector('#root')?.clientHeight}px <br/>
-    `
-  }
-
+  console.log(images);
+    
   return (
     <main className='home-page'>
       <header className='page-header'>
         <h1>ConectaJP</h1>
       </header>
       <section className="home-section">
-        <button onClick={Debug} >Debug</button>
-
+        <h2>Explore diversos produtos...</h2>
+        <div className="products-inline">
+          <img src={images[3]} alt="" />
+          <img src={images[5]} alt="" />
+          <img src={images[13]} alt="" />
+          <img src={images[24]} alt="" />
+          <img src={images[25]} alt="" />
+        </div>
+        <div className="products-inline">
+          <img src={images[1]} alt="" />
+          <img src={images[6]} alt="" />
+          <img src={images[7]} alt="" />
+          <img src={images[16]} alt="" />
+          <img src={images[18]} alt="" />
+        </div>
       </section>
     </main>
   )

@@ -1,3 +1,34 @@
 section {
   height: 100%;
 }
+
+.home-section h2{
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.products-inline {
+  height: 100px;
+  overflow-x: scroll;
+
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  justify-content: space-around;
+}
+
+.products-inline img {
+  height: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  .products-inline:nth-child(even) {
+    justify-content: flex-start;
+  }
+  
+  .products-inline:nth-child(odd) {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+}

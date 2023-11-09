@@ -141,17 +141,4 @@
   width: 7px;
 }
 
-/* SCROLL */
-
-.store-section::-webkit-scrollbar,
-.account-section::-webkit-scrollbar {
-  display: none;
-}
-.store-section::-webkit-scrollbar-track {
-	background: #1b1a1a;
-}
-.store-section::-webkit-scrollbar-thumb html,
-.account-section::-webkit-scrollbar-thumb html {
-	scroll-behavior: smooth;
-}
 
