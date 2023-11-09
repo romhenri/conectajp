@@ -4,21 +4,14 @@ import ProductCard from '../components/ProductCard'
 import '../css/pages.css'
 import '../css/StorePage.css'
 
-import data from '../products.json';
-
 interface StorePageProps {
-  images: productImages[]
-}
-
-interface productImages {
-  src: string;
-  name: string
+ data: Product[]
 }
 
 const StorePage: React.FC<StorePageProps> =
   (
     {
-      images
+      data
     }
   ) => {
   return (
@@ -33,11 +26,11 @@ const StorePage: React.FC<StorePageProps> =
     </header>
 
     <section className='store-section'>
-
-      {data.map(item => (
+      {
+        data.slice(1).map(item => (
         <ProductCard  
           title={item.name} desc={item.store.name}
-          image={images[item.id].src} price={item.price}
+          image={item.image} price={item.price}
           stars={item.stars} key={item.id}
         />
       ))}

@@ -2,18 +2,13 @@ import '../css/pages.css'
 import '../css/HomePages.css'
 
 interface HomePageProps {
-  images: productImages[]
-}
-
-interface productImages {
-  src: string;
-  name: string
+  data: Product[]
 }
 
 const HomePage: React.FC<HomePageProps> = 
   (
     {
-      images
+      data
     }
   ) => {
     
@@ -25,18 +20,18 @@ const HomePage: React.FC<HomePageProps> =
       <section className="home-section">
         <h2>Explore diversos produtos...</h2>
         <div className="products-inline">
-          <img src={images[3].src} alt={images[3].name} />
-          <img src={images[5].src} alt={images[5].name} />
-          <img src={images[13].src} alt={images[13].name} />
-          <img src={images[24].src} alt={images[24].name} />
-          <img src={images[25].src} alt={images[25].name} />
+          <img src={data[3].image} alt={data[3].name} />
+          <img src={data[5].image} alt={data[5].name} />
+          <img src={data[13].image} alt={data[13].name} />
+          <img src={data[14].image} alt={data[14].name} />
+          <img src={data[25].image} alt={data[25].name} />
         </div>
         <div className="products-inline">
-          <img src={images[1].src} alt={images[1].name} />
-          <img src={images[6].src} alt={images[6].name} />
-          <img src={images[7].src} alt={images[7].name} />
-          <img src={images[16].src} alt={images[16].name} />
-          <img src={images[18].src} alt={images[18].name} />
+          <img src={data[1].image} alt={data[1].name} />
+          <img src={data[6].image} alt={data[6].name} />
+          <img src={data[7].image} alt={data[7].name} />
+          <img src={data[16].image} alt={data[16].name} />
+          <img src={data[18].image} alt={data[18].name} />
         </div>
       </section>
     </main>

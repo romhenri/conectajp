@@ -1,4 +1,16 @@
-[
+[ 
+  {
+    "id": 0,
+    "name": "Default",
+    "desc": "",
+    "price": 0,
+    "stars": 0,
+    "store": {
+      "name": "",
+      "address": "",
+      "phone": ""
+    }
+  },
   {
     "id": 1,
     "name": "Parafina Bronzeadora Morena Jambo Cenoura e Urucum FPS 6 100g",
