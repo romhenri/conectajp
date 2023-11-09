@@ -1,4 +1,5 @@
-console.log("getCLientInfo");
+console.log("Desenvolvido por Rômulo Henri (2023)");
+console.log("getCLientInfo.js loading...");
 
 const documentHeight = () => {
   const doc = document.documentElement;

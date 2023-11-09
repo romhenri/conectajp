@@ -7,7 +7,12 @@ import '../css/StorePage.css'
 import data from '../products.json';
 
 interface StorePageProps {
-  images: string[]
+  images: productImages[]
+}
+
+interface productImages {
+  src: string;
+  name: string
 }
 
 const StorePage: React.FC<StorePageProps> =
@@ -32,7 +37,7 @@ const StorePage: React.FC<StorePageProps> =
       {data.map(item => (
         <ProductCard  
           title={item.name} desc={item.store.name}
-          image={images[item.id]} price={item.price}
+          image={images[item.id].src} price={item.price}
           stars={item.stars} key={item.id}
         />
       ))}

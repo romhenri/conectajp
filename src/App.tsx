@@ -2,8 +2,9 @@ import Menu from './components/Menu'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import StorePage from './pages/StorePage'
-import AccountPage from './pages/AccountPage'
 import MapPage from './pages/MapPage'
+import AccountPage from './pages/AccountPage'
+import CartPage from './pages/CartPage'
 import './scripts/getClientInfo.js'
 import './App.css'
 
@@ -34,31 +35,126 @@ import produto23 from './assets/products/produto23.jpg'
 import produto24 from './assets/products/produto24.jpg'
 import produto25 from './assets/products/produto25.jpg'
 
-const images = [
-  generic_product,
-  produto1, produto2, produto3,
-  produto4, produto5, produto6,
-  produto7, produto8, produto9,
-  produto10, produto11, produto12,
-  produto13, produto14, produto15,
-  produto16, produto17, produto18,
-  produto19, produto20, produto21, 
-  produto22, produto23, produto24,
-  produto25,
+const productImages = [
+  {
+    src: generic_product,
+    name: "Generic"
+  },
+  {
+    src: produto1,
+    name: "Generic"
+  },
+  {
+    src: produto2,
+    name: "Generic"
+  },
+  {
+    src: produto3,
+    name: "Generic"
+  }, 
+  {
+    src: produto4,
+    name: "Generic"
+  },
+  {
+    src: produto5,
+    name: "Generic"
+  },
+  {
+    src: produto6,
+    name: "Generic"
+  },
+  {
+    src: produto7,
+    name: "Generic"
+  },
+  {
+    src: produto8,
+    name: "Generic"
+  },
+  {
+    src: produto9,
+    name: "Generic"
+  },
+  {
+    src: produto10,
+    name: "Generic"
+  },
+  {
+    src: produto11,
+    name: "Generic"
+  },
+  {
+    src: produto12,
+    name: "Generic"
+  },
+  {
+    src: produto13,
+    name: "Generic"
+  },
+  {
+    src: produto14,
+    name: "Generic"
+  },
+  {
+    src: produto15,
+    name: "Generic"
+  },
+  {
+    src: produto16,
+    name: "Generic"
+  },
+  {
+    src: produto17,
+    name: "Generic"
+  },
+  {
+    src: produto18,
+    name: "Generic"
+  },
+  {
+    src: produto19,
+    name: "Generic"
+  },
+  {
+    src: produto20,
+    name: "Generic"
+  },
+  {
+    src: produto21,
+    name: "Generic"
+  },
+  {
+    src: produto22,
+    name: "Generic"
+  },
+  {
+    src: produto23,
+    name: "Generic"
+  },
+  {
+    src: produto24,
+    name: "Generic"
+  },
+  {
+    src: produto25,
+    name: "Generic"
+  }
 ]
 
 function App() {
-  console.log("Desenvolvido por Rômulo Henri (2023)");
-
   return (
     <>
      <Router>
         <Routes>
-          <Route path='/' element={<HomePage images={images}/>}/>
-          <Route path='/loja' element={<StorePage images={images}/>}/>
-          <Route path='/mais' element={"ConectaJP - Mais"}/>
-          <Route path='/mapa' element={<MapPage/>}/>
-          <Route path='/minha-conta' element={<AccountPage/>}/>
+          <Route path='/' element={<HomePage images={productImages}/>}/>
+          <Route path='/loja' element={<StorePage images={productImages}/>}/>
+          <Route path='mais' element={"ConectaJP - Mais"}/>
+          <Route path='mapa' element={<MapPage/>}/>
+          <Route path='minha-conta'> 
+            <Route index element={<AccountPage/>}/>
+            <Route path='carrinho' element={<CartPage/>}/>
+          </Route>
         </Routes>
         <Menu/>
       </Router>
