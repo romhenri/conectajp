@@ -6,6 +6,7 @@ import ProductPage from './pages/ProductPage.tsx'
 import MapPage from './pages/MapPage'
 import AccountPage from './pages/AccountPage'
 import CartPage from './pages/CartPage'
+import RequestsPage from './pages/RequestsPage'
 import './scripts/getClientInfo.js'
 import './App.css'
 
@@ -31,6 +32,7 @@ function App() {
           <Route path='minha-conta' > 
             <Route index element={<AccountPage/>}/>
             <Route path='carrinho' element={<CartPage/>}/>
+            <Route path='pedidos' element={<RequestsPage/>}/>
           </Route>
         </Routes>
         <Menu/>

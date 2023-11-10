@@ -1,13 +1,17 @@
 /* Header */
 
 .account-page .page-header,
-.cart-page .page-header {
+.cart-page .page-header,
+.requests-page .page-header
+{
   display: flex;
   justify-content: space-between;
 }
 
 .account-page .page-header div,
-.cart-page .page-header div {
+.cart-page .page-header div, 
+.requests-page .page-header div 
+{
   width: 80px;
   height: 100%;
   display: flex;
