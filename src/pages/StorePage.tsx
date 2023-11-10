@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import icon_search from '../assets/search-svgrepo-com.svg'
 import SearchBar from '../components/SearchBar'
 import ProductCard from '../components/ProductCard'
@@ -9,11 +11,34 @@ interface StorePageProps {
 }
 
 const StorePage: React.FC<StorePageProps> =
-  (
-    {
-      data
-    }
-  ) => {
+  ({data}) => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Navigate to "name"
+    const handleProductCardClick = (id: number) => {
+      navigate(`/loja/produto/${id}`);
+  }
+    // Add "EventListener" to all cards
+    const productsCards = document.querySelectorAll('.productCard');
+    console.log(productsCards);
+    productsCards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        handleProductCardClick(data[index+1].id);
+      });
+    });
+
+    // Remove "EventListener" to all cards
+    return () => {
+      productsCards.forEach((card, index) => {
+        card.removeEventListener('click', () => {
+          handleProductCardClick(data[index].id);
+        });
+      });
+    };
+  }, [navigate]);
+
   return (
   <main className='store-page'>
     <header className='page-header'>
