@@ -59,6 +59,12 @@
   display: flex;
 }
 
+.productCard:active {
+  background-color: rgba(212, 233, 252, 0.3);
+  scale: .96;
+  transition: .3s;
+}
+
 .store-section {
   display: block;
   height: 80%;

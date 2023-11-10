@@ -1,17 +1,24 @@
 import DefaultProfile from '../assets/default-profile.png'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
 
 const CartPage= () => {
+  const navigate = useNavigate();
+
+  const returnStorePage = () => {
+    navigate('..')
+  }
+
   return (
-  <main className='account-page'>
+  <main className='cart-page'>
     <header className='page-header'>
-      <Link to={'..'}>
+      <div onClick={returnStorePage}>
         <p>Voltar</p>
-      </Link>
+      </div>
       <h1>Meu Carrinho</h1>
+      <div></div>
     </header>
 
     <section className='middle-section'>
