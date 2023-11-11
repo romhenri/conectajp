@@ -7,6 +7,7 @@ import MapPage from './pages/MapPage'
 import AccountPage from './pages/AccountPage'
 import CartPage from './pages/CartPage'
 import RequestsPage from './pages/RequestsPage'
+import FavoritesPage from './pages/FavoritesPage'
 import './scripts/getClientInfo.js'
 import './App.css'
 
@@ -33,6 +34,7 @@ function App() {
             <Route index element={<AccountPage/>}/>
             <Route path='carrinho' element={<CartPage/>}/>
             <Route path='pedidos' element={<RequestsPage/>}/>
+            <Route path='favoritos' element={<FavoritesPage/>}/>
           </Route>
         </Routes>
         <Menu/>
