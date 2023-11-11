@@ -22,7 +22,6 @@ const StorePage: React.FC<StorePageProps> =
   }
     // Add "EventListener" to all cards
     const productsCards = document.querySelectorAll('.productCard');
-    console.log(productsCards);
     productsCards.forEach((card, index) => {
       card.addEventListener('click', () => {
         handleProductCardClick(data[index+1].id);

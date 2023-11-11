@@ -46,6 +46,4 @@ products.map((item) => {
   item.image = productImages[item.id]
 })
 
-console.log(products);
-
 export default products;

@@ -32,13 +32,13 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
     </header>
 
     <section className='middle-section'>
-      <img src={data[numberID].image} />
-      <h2>{data[numberID].name}</h2>
-      <hr />
-      <p className='desc'>{data[numberID].desc}</p>
-      <div className='price'>
-        {data[numberID].price.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
-      </div>
+        <img src={data[numberID].image} />
+        <h2>{data[numberID].name}</h2>
+        <hr />
+        <p className='desc'>{data[numberID].desc}</p>
+        <div className='price'>
+          {data[numberID].price.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
+        </div>
     </section>
   </main>)
 }

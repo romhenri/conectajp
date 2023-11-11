@@ -33,7 +33,6 @@
   overflow-y: scroll;
   display: block;
   /* display: none; */
-  height: 80%;
   max-width: 100%;
   padding-top: 16px;
   padding-bottom: 200px;
@@ -51,7 +50,7 @@
 }
 
 .account-page .content-box h2 {
-  font-size: 1.43em;
+  font-size: 1.2em;
 }
 
 .account-page .content-box {
@@ -67,7 +66,7 @@
 }
 
 .account-page .review-box img {
-  width: 20px;
+  width: 16px;
   height: 100%;
 }
 

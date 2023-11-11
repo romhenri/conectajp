@@ -36,6 +36,12 @@ body {
   background: linear-gradient(90deg, rgba(148,186,254,1) 0%, rgba(142,249,167,1) 100%);
 }
 
+header.page-header h1 {
+  font-family: 'Maven Pro', sans-serif;
+  color: #2873b1;
+  font-weight: 500;
+}
+
 footer {
   width: 500px;
   margin: auto;

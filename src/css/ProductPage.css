@@ -10,9 +10,24 @@
   align-items: center;
 }
 
+.product-page section {
+  position: absolute;
+  overflow-y: scroll;
+  display: block;
+  /* display: none; */
+  max-width: 100%;
+  padding-top: 16px;
+  padding-bottom: 200px;
+}
+
 .product-page section h2 {
+  font-size: 1.2rem;
   margin-top: 10px;
   margin-bottom: 15px;
+  font-family: 'Maven Pro', sans-serif;
+  color: #2873b1;
+  /* color: #105e30; */
+  font-weight: 500;
 }
 
 .product-page section img {
@@ -23,7 +38,7 @@
 
 .product-page section .desc {
   padding: 10px 40px;
-
+  opacity: .6;
 }
 
 .product-page section .price {

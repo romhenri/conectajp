@@ -25,8 +25,6 @@ const MapPage = () => {
     const headerHeight = header.clientHeight;
     const menuHeight = menu.clientHeight;
     const windowsHeight = window.innerHeight;
-
-    console.log(menuHeight);
     
     if(window.innerWidth > 800) {
       section.style.height = `${900 - headerHeight - menuHeight}px`

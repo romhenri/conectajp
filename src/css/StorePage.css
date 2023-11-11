@@ -67,7 +67,6 @@
 
 .store-section {
   display: block;
-  height: 80%;
   overflow-y: scroll;
   scroll-behavior: smooth;
   padding-top: 12px;
@@ -91,7 +90,7 @@
 .content-box {
   flex-grow: 1;
   position: relative;
-  padding: 5px 20px;
+  padding: 5px 20px 5px 15px;
 }
 
 .content-box h2 {
@@ -103,11 +102,16 @@
   display: -webkit-box;
   -webkit-line-clamp: 1; 
   -webkit-box-orient: vertical;
+  font-family: 'Maven Pro', sans-serif;
+  color: #2873b1;
+  /* color: #105e30; */
+  font-weight: 500;
 }
 
-.content-box .desc {
+.productCard p.desc {
+  font-size: .8;
   text-align: start;
-  opacity: .7;
+  opacity: .6;
   display: none;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -134,7 +138,7 @@
 
 .review-box {
   position: absolute;
-  left: 20px;
+  left: 15px;
   bottom: 0px;
 }
 
