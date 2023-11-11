@@ -42,10 +42,57 @@
 }
 
 .product-page section .price {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: 1px solid #0000003a;
+  /* border: none; */
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.product-page section .store {
   margin-top: 20px;
   padding: 10px 20px;
   border: 1px solid #0000003a;
   border-radius: 10px;
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.product-page .flexLine {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.product-page .flexLine > * {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.product-page .flexLine button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 500;
+}
+
+.product-page .flexLine button:nth-child(even) {
+  background-color:  #32c77079;
+  color: #0000009a;
+}
+
+.product-page .flexLine button:nth-child(odd) {
+  background-color: transparent;
+  border: 2px solid #32c77079;
+  color: #0000009a;
+}
+
+.product-page .flexLine button:active {
+  transition: .3s;
+  scale: .97;
 }

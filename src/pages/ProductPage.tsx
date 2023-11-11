@@ -36,9 +36,21 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
         <h2>{data[numberID].name}</h2>
         <hr />
         <p className='desc'>{data[numberID].desc}</p>
-        <div className='price'>
-          {data[numberID].price.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
+        <div className="flexLine">
+          <div className='price'>
+            {data[numberID].price.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
+          </div>
         </div>
+        
+        <div className="review">
+          {/* {data[numberID].stars} */}
+        </div>
+
+        <div className="flexLine">
+          <button>Adicionar ao Carrinho</button>
+          <button>Comprar</button>
+        </div>
+        
     </section>
   </main>)
 }
