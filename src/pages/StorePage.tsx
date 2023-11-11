@@ -5,14 +5,13 @@ import SearchBar from '../components/SearchBar'
 import ProductCard from '../components/ProductCard'
 import '../css/pages.css'
 import '../css/StorePage.css'
-import { products as data }  from '../data/productsData.ts'
 
 interface StorePageProps {
- data1: Product[]
+ data: Product[]
 }
 
 const StorePage: React.FC<StorePageProps> =
-  ({data1}) => {
+  ({data}) => {
   
   const navigate = useNavigate();
 

@@ -10,7 +10,7 @@ interface ProductPageProps {
 }
 
 const ProductPage: React.FC<ProductPageProps> = ({data}) => {
-  let { Id } = useParams();
+  const { Id } = useParams();
   const navigate = useNavigate();
   if (!Id) return
   const numberID: number = parseInt(Id, 10);
