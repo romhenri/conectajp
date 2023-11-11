@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom'
+import { addToCart } from '../scripts/handleStorage.js'
 import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
@@ -11,14 +12,16 @@ interface ProductPageProps {
 const ProductPage: React.FC<ProductPageProps> = ({data}) => {
   let { Id } = useParams();
   const navigate = useNavigate();
+  if (!Id) return
+  const numberID: number = parseInt(Id, 10);
 
   const returnStorePage = () => {
     navigate('../..')
   }
 
-  if (!Id) return
-  const numberID: number = parseInt(Id, 10);
-  console.log(Id);
+  const addProductToCard = () => {
+    addToCart(numberID)
+  }
 
   return (
   <main className='product-page'>
@@ -47,7 +50,7 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
         </div>
 
         <div className="flexLine">
-          <button>Adicionar ao Carrinho</button>
+          <button onClick={addProductToCard}>Adicionar ao Carrinho</button>
           <button>Comprar</button>
         </div>
         

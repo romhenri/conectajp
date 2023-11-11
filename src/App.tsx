@@ -9,6 +9,7 @@ import CartPage from './pages/CartPage'
 import RequestsPage from './pages/RequestsPage'
 import FavoritesPage from './pages/FavoritesPage'
 import './scripts/getClientInfo.js'
+import './scripts/handleStorage.js'
 import './App.css'
 
 import { products } from './data/productsData.ts'
