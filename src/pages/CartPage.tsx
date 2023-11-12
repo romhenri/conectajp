@@ -1,12 +1,11 @@
-import { products }  from '../data/productsData.ts'
-// import { getCart } from '../scripts/handleStorage.js'
-import { useNavigate } from 'react-router-dom'
+import localforage from "localforage";
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { products }  from '../data/productsData.ts'
 import ProductCard from '../components/ProductCard'
 import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
-import localforage from "localforage";
 
 const CartPage= () => {
   const navigate = useNavigate();
@@ -41,7 +40,7 @@ const CartPage= () => {
   }
     // Add "EventListener" to all cards
     const Cards = document.querySelectorAll('.productCard');
-    console.log(Cards);
+    // console.log(Cards);
     
     Cards.forEach((card, index) => {
       card.addEventListener('click', () => {
