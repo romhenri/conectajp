@@ -11,7 +11,15 @@
   padding-bottom: 12px;
   gap: 15px;
 }
- 
+
+.store-section {
+  display: block;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding-top: 12px;
+  padding-bottom: 80px;
+}
+
 .searchbar-div {
   position: relative;
   display: flex;
@@ -65,15 +73,7 @@
   transition: .3s;
 }
 
-.store-section {
-  display: block;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  padding-top: 12px;
-  padding-bottom: 80px;
-}
-
-.store-page .image-box {
+.productCard .image-box {
   width: 100px;
   height: 100px;
   overflow: hidden;
@@ -81,7 +81,7 @@
   min-width: 100px;
 }
 
-.image-box img {
+.productCard .image-box img {
   height: 100%;
   filter: brightness(120%);
   scale: 1;

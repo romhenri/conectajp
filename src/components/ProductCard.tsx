@@ -3,6 +3,7 @@ import star from '../assets/star-30.png'
 interface ProductCardProps {
   image: any;
   title: string;
+  productId: number,
   desc?: string;
   prevPrice?: number | null;
   price: number;
@@ -14,6 +15,7 @@ const ProductCard: React.FC<ProductCardProps> =
     {
       image,
       title = "",
+      productId,
       desc = "",
       prevPrice = null,
       price,
@@ -21,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> =
     }
   ) => {
     return (
-    <div className="productCard">
+    <div className="productCard" data-id={productId}>
         <div className="image-box">
           <img src={image}/>
         </div>

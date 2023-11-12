@@ -24,7 +24,10 @@ const StorePage: React.FC<StorePageProps> =
     const productsCards = document.querySelectorAll('.productCard');
     productsCards.forEach((card, index) => {
       card.addEventListener('click', () => {
-        handleProductCardClick(data[index+1].id);
+        const idAttr = card.getAttribute('data-id')
+        if (idAttr) {
+          handleProductCardClick(parseInt(idAttr, 10));
+        }
       });
     });
 
@@ -32,7 +35,10 @@ const StorePage: React.FC<StorePageProps> =
     return () => {
       productsCards.forEach((card, index) => {
         card.removeEventListener('click', () => {
-          handleProductCardClick(data[index].id);
+          const idAttr = card.getAttribute('data-id')
+          if (idAttr) {
+            handleProductCardClick(parseInt(idAttr, 10));
+          }
         });
       });
     };
@@ -53,9 +59,13 @@ const StorePage: React.FC<StorePageProps> =
       {
         data.slice(1).map(item => (
         <ProductCard  
-          title={item.name} desc={item.store.name}
-          image={item.image} price={item.price}
-          stars={item.stars} key={item.id}
+          title={item.name}
+          productId={item.id}
+          desc={item.store.name}
+          image={item.image}
+          price={item.price}
+          stars={item.stars}
+          key={item.id}
         />
       ))}
 

@@ -46,4 +46,5 @@ products.map((item) => {
   item.image = productImages[item.id]
 })
 
+// console.log("Products Data: ", products);
 export default products;

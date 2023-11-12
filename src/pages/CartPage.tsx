@@ -34,6 +34,37 @@ const CartPage= () => {
   })
   }, []);
 
+  useEffect(() => {
+    // Navigate to "name"
+    const handleProductCardClick = (id: number) => {
+      navigate(`/loja/produto/${id}`);
+  }
+    // Add "EventListener" to all cards
+    const Cards = document.querySelectorAll('.productCard');
+    console.log(Cards);
+    
+    Cards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        const idAttr = card.getAttribute('data-id')
+        if (idAttr) {
+          handleProductCardClick(parseInt(idAttr, 10));
+        }
+      });
+    });
+
+    // Remove "EventListener" to all cards
+    return () => {
+      Cards.forEach((card, index) => {
+        card.removeEventListener('click', () => {
+          const idAttr = card.getAttribute('data-id')
+          if (idAttr) {
+            handleProductCardClick(parseInt(idAttr, 10));
+          }
+        });
+      });
+    };
+  }, [canRender]);
+
   return (
   <main className='cart-page'>
     <header className='page-header'>
@@ -49,6 +80,7 @@ const CartPage= () => {
           productsCards.map(item => (
             <ProductCard
               title={item.name}
+              productId={item.id}
               desc={item.desc}
               image={item.image}
               price={item.price}

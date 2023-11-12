@@ -1,4 +1,3 @@
-import DefaultProfile from '../assets/default-profile.png'
 import { useNavigate } from 'react-router-dom'
 import '../css/pages.css'
 import '../css/StorePage.css'
@@ -22,12 +21,6 @@ const CartPage= () => {
     </header>
 
     <section className='middle-section'>
-      <div className="image-box">
-        <img src={DefaultProfile} alt="" />
-      </div>
-
-      <div className="content-box">
-      </div>
     </section>
   </main>)
 }
