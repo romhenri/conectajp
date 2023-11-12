@@ -1,27 +1,53 @@
+import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
-import { addToCart } from '../scripts/handleStorage.js'
+import { addToCart, getFavorites, addToFavorites, removeFromFavorites } from '../scripts/handleStorage.js'
+import icon_heart from '../assets/heart.svg'
+import icon_full_heart from '../assets/full-heart.svg'
 import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
 import '../css/ProductPage.css'
+import localforage from "localforage";
 
 interface ProductPageProps {
   data: Product[]
 }
 
 const ProductPage: React.FC<ProductPageProps> = ({data}) => {
+  // const favoriteButton = useRef<HTMLDivElement>(null);
+  const [favorites, setFavorites] = useState<number[]>([]);
+  const favoriteButton = useRef<HTMLImageElement>(null);
   const { Id } = useParams();
   const navigate = useNavigate();
   if (!Id) return
   const numberID: number = parseInt(Id, 10);
 
-  const returnStorePage = () => {
-    navigate('../..')
-  }
+  const returnStorePage = () => {navigate('../..')}
+  const addProductToCard = () => {addToCart(numberID)}
 
-  const addProductToCard = () => {
-    addToCart(numberID)
+  const toggleFavorite = () => {
+    if (favoriteButton.current) {
+      favoriteButton.current.classList.toggle('active');
+
+      if(favoriteButton.current.classList.contains('active')) {
+        addToFavorites(numberID)
+        favoriteButton.current.src = icon_full_heart
+      } else{
+        removeFromFavorites(numberID)
+        favoriteButton.current.src = icon_heart
+      }
+    }
   }
+  
+  useEffect(() => {
+    localforage.getItem('favorites', function (err, value: any) {
+      if (value.includes(numberID)) {
+        if(!favoriteButton.current) return
+        favoriteButton.current.classList.add('active');
+        favoriteButton.current.src = icon_full_heart;
+      }
+    })
+  }, []);
 
   return (
   <main className='product-page'>
@@ -41,10 +67,16 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
         <p className='desc'>{data[numberID].desc}</p>
         <div className="flexLine">
           <div className='price'>
-            {data[numberID].price.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
+            <div></div>
+            <p>
+              {data[numberID].price.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
+              </p>
+            <div onClick={toggleFavorite}>
+              <img ref={favoriteButton} src={icon_heart} alt="favorite" />
+            </div>
           </div>
         </div>
-        
+
         <div className="review">
           {/* {data[numberID].stars} */}
         </div>

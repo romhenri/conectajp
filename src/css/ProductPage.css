@@ -42,6 +42,9 @@
 }
 
 .product-page section .price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 10px;
   padding: 10px 20px;
   border: 1px solid #0000003a;
@@ -49,6 +52,30 @@
   border-radius: 10px;
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.product-page section .price img {
+  opacity: .4;
+}
+
+.product-page section .price img.active {
+  opacity: .9;
+}
+
+.product-page section .price div {
+  width: 35px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.product-page section .price img {
+  height: 35px;
+}
+
+.product-page section .price img:active {
+  scale: 1.2;
+  transition: .3s;
 }
 
 .product-page section .store {
@@ -82,7 +109,7 @@
 }
 
 .product-page .flexLine button:nth-child(even) {
-  background-color:  #32c77079;
+  background-color:  #74e2a2;
   color: #0000009a;
 }
 
