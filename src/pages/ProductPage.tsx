@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { addToCart, getFavorites, addToFavorites, removeFromFavorites } from '../scripts/handleStorage.js'
 import icon_heart from '../assets/heart.svg'
 import icon_full_heart from '../assets/full-heart.svg'
+import icon_star from '../assets/star-30.png'
 import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
@@ -11,6 +12,18 @@ import localforage from "localforage";
 
 interface ProductPageProps {
   data: Product[]
+}
+
+const styledStar = {
+  width: '20px',
+  margin: '0px'
+}
+const styledAlignedBox = {
+  display: 'flex',
+  marginTop: '12px',
+  marginBottom: '0px',
+  justifyContent: 'center',
+  gap: '8px'
 }
 
 const ProductPage: React.FC<ProductPageProps> = ({data}) => {
@@ -65,6 +78,12 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
         <h2>{data[numberID].name}</h2>
         <hr />
         <p className='desc'>{data[numberID].desc}</p>
+    
+        <div className="review" style={styledAlignedBox}>
+          {data[numberID].stars}
+          <img src={icon_star} style={styledStar}/>
+        </div>
+
         <div className="flexLine">
           <div className='price'>
             <div></div>
@@ -77,13 +96,15 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
           </div>
         </div>
 
-        <div className="review">
-          {/* {data[numberID].stars} */}
-        </div>
-
         <div className="flexLine">
           <button onClick={addProductToCard}>Adicionar ao Carrinho</button>
           <button>Comprar</button>
+        </div>
+        <hr />
+        <div className='box'>
+          <p>
+            {data[numberID].store.name} - {data[numberID].store.phone}
+          </p>
         </div>
         
     </section>
