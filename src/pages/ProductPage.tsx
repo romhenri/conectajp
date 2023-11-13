@@ -16,7 +16,8 @@ interface ProductPageProps {
 }
 
 const styledStar = {
-  width: '20px',
+  width: '16px',
+  height: '16px',
   margin: '0px'
 }
 const styledAlignedBox = {
@@ -24,7 +25,22 @@ const styledAlignedBox = {
   marginTop: '12px',
   marginBottom: '0px',
   justifyContent: 'center',
-  gap: '8px'
+  gap: '6px',
+  alignItems: 'center'
+}
+
+function getStars(number: number | undefined) {
+  if (!number) return
+  const starsArray = []
+  number = Math.trunc(number)
+
+  for(let i = 0; i < number; i++) {
+    starsArray.push((
+      <img src={icon_star} style={styledStar} key={i}/>
+    ))
+  }
+
+  return starsArray
 }
 
 const ProductPage: React.FC<ProductPageProps> = ({data}) => {
@@ -86,8 +102,8 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
         <p className='desc'>{data[numberID].desc}</p>
     
         <div className="review" style={styledAlignedBox}>
-          {data[numberID].stars}
-          <img src={icon_star} style={styledStar}/>
+          <span>{data[numberID].stars}</span>
+          {getStars(data[numberID].stars)}
         </div>
 
         <div className="flexLine">
@@ -107,8 +123,8 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
           <button>Comprar</button>
         </div>
         <hr />
-        <div className='box'>
-          <p>
+        <div>
+          <p className="store">
             {data[numberID].store.name} - {data[numberID].store.phone}
           </p>
         </div>
