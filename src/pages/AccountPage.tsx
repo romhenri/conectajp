@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import DefaultProfile from '../assets/default-profile.png'
 import icon_star from '../assets/star-30.png'
@@ -50,9 +51,19 @@ const MyAccountPage= () => {
       </div>
     </div>
       <hr />
-      <div className="option">Ajustes</div>
-      <div className="option">Suas Avaliações</div>
-      <div className="option">Reembolsos e Devoluções</div>
+
+      <div className="option">
+        Ajustes
+      </div>
+
+      <div className="option">
+        Suas Avaliações
+      </div>
+
+      <div className="option">
+        Reembolsos e Devoluções
+      </div>
+
       <hr />
       <div className="option">
         Central de Ajuda</div>
@@ -62,6 +73,7 @@ const MyAccountPage= () => {
       <footer>
       </footer>
     </section>
+
   </main>)
 }
 

@@ -1,6 +1,8 @@
+import localforage from "localforage";
 import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { addToCart, getFavorites, addToFavorites, removeFromFavorites } from '../scripts/handleStorage.js'
+import ModalManager from '../scripts/ModalManager'; 
 import icon_heart from '../assets/heart.svg'
 import icon_full_heart from '../assets/full-heart.svg'
 import icon_star from '../assets/star-30.png'
@@ -8,7 +10,6 @@ import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
 import '../css/ProductPage.css'
-import localforage from "localforage";
 
 interface ProductPageProps {
   data: Product[]
@@ -34,9 +35,14 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
   const navigate = useNavigate();
   if (!Id) return
   const numberID: number = parseInt(Id, 10);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const closeModal = () => setIsModalOpen(false);
   const returnStorePage = () => {navigate('../..')}
-  const addProductToCard = () => {addToCart(numberID)}
+  const addProductToCard = () => {
+    addToCart(numberID);
+    setIsModalOpen(true);
+  }
 
   const toggleFavorite = () => {
     if (favoriteButton.current) {
@@ -108,6 +114,11 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
         </div>
         
     </section>
+
+    <ModalManager
+      isModalOpen={isModalOpen}
+      closeModal={closeModal} 
+    />
   </main>)
 }
 

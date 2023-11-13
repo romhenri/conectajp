@@ -65,6 +65,7 @@
   margin-bottom: 6px;
 
   display: flex;
+  cursor: pointer;
 }
 
 .productCard:active {
