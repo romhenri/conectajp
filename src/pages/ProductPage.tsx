@@ -2,7 +2,7 @@ import localforage from "localforage";
 import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { addToCart, getFavorites, addToFavorites, removeFromFavorites } from '../scripts/handleStorage.js'
-import ModalManager from '../scripts/ModalManager'; 
+import ModalManager from '../components/ModalManager.js'; 
 import icon_heart from '../assets/heart.svg'
 import icon_full_heart from '../assets/full-heart.svg'
 import icon_star from '../assets/star-30.png'
@@ -51,13 +51,18 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
   const navigate = useNavigate();
   if (!Id) return
   const numberID: number = parseInt(Id, 10);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalCartOpen, setIsModalCartOpen] = useState(false);
+  const [isModalRequestOpen, setIsModalRequestOpen] = useState(false);
 
-  const closeModal = () => setIsModalOpen(false);
+  const closeModalCart = () => setIsModalCartOpen(false);
+  const closeModalRequest = () => setIsModalRequestOpen(false);
   const returnStorePage = () => {navigate('../..')}
   const addProductToCard = () => {
     addToCart(numberID);
-    setIsModalOpen(true);
+    setIsModalCartOpen(true);
+  }
+  const Request = () => {
+    setIsModalRequestOpen(true);
   }
 
   const toggleFavorite = () => {
@@ -120,7 +125,7 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
 
         <div className="flexLine">
           <button onClick={addProductToCard}>Adicionar ao Carrinho</button>
-          <button>Comprar</button>
+          <button onClick={Request}>Comprar</button>
         </div>
         <hr />
         <div>
@@ -132,8 +137,14 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
     </section>
 
     <ModalManager
-      isModalOpen={isModalOpen}
-      closeModal={closeModal} 
+      type="AddToCart"
+      isModalOpen={isModalCartOpen}
+      closeModal={closeModalCart} 
+    />
+    <ModalManager
+      type="Request"
+      isModalOpen={isModalRequestOpen}
+      closeModal={closeModalRequest} 
     />
   </main>)
 }

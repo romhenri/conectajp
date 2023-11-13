@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactComponentElement } from 'react';
 import { useNavigate } from 'react-router-dom'
 import '../css/Modal.css'
 
@@ -6,7 +6,7 @@ interface ModalProps {
   onClose: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ onClose }) => {
+const modalAddToCart: React.FC<ModalProps> = ({ onClose }) => {
   const navigate = useNavigate();
   const goToCartPage = () => {navigate('/minha-conta/carrinho')};
 
@@ -31,4 +31,4 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
   );
 };
 
-export default Modal;
+export default modalAddToCart;
