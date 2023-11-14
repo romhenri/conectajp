@@ -1,7 +1,7 @@
 import localforage from "localforage";
 import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
-import { addToCart, getFavorites, addToFavorites, removeFromFavorites } from '../scripts/handleStorage.js'
+import { addToCart, addToFavorites, removeFromFavorites, addToRequests } from '../scripts/handleStorage.js'
 import ModalManager from '../components/ModalManager.js'; 
 import icon_heart from '../assets/heart.svg'
 import icon_full_heart from '../assets/full-heart.svg'
@@ -62,6 +62,7 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
     setIsModalCartOpen(true);
   }
   const Request = () => {
+    addToRequests(numberID)
     setIsModalRequestOpen(true);
   }
 
