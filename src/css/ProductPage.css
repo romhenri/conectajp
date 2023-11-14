@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 3px;
   padding: 10px 20px;
   border: 1px solid #0000003a;
   /* border: none; */
@@ -78,7 +78,7 @@
   transition: .3s;
 }
 
-.product-page section .store {
+.product-page section .store-box {
   margin-top: 20px;
   padding: 10px 20px;
   border: 1px solid #0000003a;
@@ -87,11 +87,18 @@
   font-weight: 500;
 }
 
+.product-page section .store {
+  font-size: .9rem;
+  font-weight: 400;
+  color: #2873b1;
+}
+
 .product-page .flexLine {
   width: 100%;
   display: flex;
   gap: 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .product-page .flexLine > * {
@@ -106,6 +113,7 @@
   text-transform: uppercase;
   font-family: 'Maven Pro', sans-serif;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .product-page .flexLine button:nth-child(even) {

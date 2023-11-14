@@ -1,6 +1,8 @@
+import localforage from "localforage";
 import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { addToCart, getFavorites, addToFavorites, removeFromFavorites } from '../scripts/handleStorage.js'
+import ModalManager from '../components/ModalManager.js'; 
 import icon_heart from '../assets/heart.svg'
 import icon_full_heart from '../assets/full-heart.svg'
 import icon_star from '../assets/star-30.png'
@@ -8,14 +10,14 @@ import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
 import '../css/ProductPage.css'
-import localforage from "localforage";
 
 interface ProductPageProps {
   data: Product[]
 }
 
 const styledStar = {
-  width: '20px',
+  width: '16px',
+  height: '16px',
   margin: '0px'
 }
 const styledAlignedBox = {
@@ -23,7 +25,22 @@ const styledAlignedBox = {
   marginTop: '12px',
   marginBottom: '0px',
   justifyContent: 'center',
-  gap: '8px'
+  gap: '6px',
+  alignItems: 'center'
+}
+
+function getStars(number: number | undefined) {
+  if (!number) return
+  const starsArray = []
+  number = Math.trunc(number)
+
+  for(let i = 0; i < number; i++) {
+    starsArray.push((
+      <img src={icon_star} style={styledStar} key={i}/>
+    ))
+  }
+
+  return starsArray
 }
 
 const ProductPage: React.FC<ProductPageProps> = ({data}) => {
@@ -34,9 +51,19 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
   const navigate = useNavigate();
   if (!Id) return
   const numberID: number = parseInt(Id, 10);
+  const [isModalCartOpen, setIsModalCartOpen] = useState(false);
+  const [isModalRequestOpen, setIsModalRequestOpen] = useState(false);
 
+  const closeModalCart = () => setIsModalCartOpen(false);
+  const closeModalRequest = () => setIsModalRequestOpen(false);
   const returnStorePage = () => {navigate('../..')}
-  const addProductToCard = () => {addToCart(numberID)}
+  const addProductToCard = () => {
+    addToCart(numberID);
+    setIsModalCartOpen(true);
+  }
+  const Request = () => {
+    setIsModalRequestOpen(true);
+  }
 
   const toggleFavorite = () => {
     if (favoriteButton.current) {
@@ -80,8 +107,8 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
         <p className='desc'>{data[numberID].desc}</p>
     
         <div className="review" style={styledAlignedBox}>
-          {data[numberID].stars}
-          <img src={icon_star} style={styledStar}/>
+          <span>{data[numberID].stars}</span>
+          {getStars(data[numberID].stars)}
         </div>
 
         <div className="flexLine">
@@ -98,16 +125,27 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
 
         <div className="flexLine">
           <button onClick={addProductToCard}>Adicionar ao Carrinho</button>
-          <button>Comprar</button>
+          <button onClick={Request}>Comprar</button>
         </div>
         <hr />
-        <div className='box'>
-          <p>
+        <div>
+          <p className="store">
             {data[numberID].store.name} - {data[numberID].store.phone}
           </p>
         </div>
         
     </section>
+
+    <ModalManager
+      type="AddToCart"
+      isModalOpen={isModalCartOpen}
+      closeModal={closeModalCart} 
+    />
+    <ModalManager
+      type="Request"
+      isModalOpen={isModalRequestOpen}
+      closeModal={closeModalRequest} 
+    />
   </main>)
 }
 
