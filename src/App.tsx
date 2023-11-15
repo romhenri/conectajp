@@ -23,9 +23,11 @@ function App() {
 
           <Route path='loja'>
             <Route index element={<StorePage data={products}/>}/>
+            <Route path=':Term' element={<StorePage data={products} />}/>
+
             <Route path='produto'>
               <Route path=':Id' 
-                element={<ProductPage data={products} />} />
+                element={<ProductPage data={products} />}/>
             </Route>
           </Route>
 
