@@ -8,6 +8,34 @@ section {
   font-family: 'Maven Pro', sans-serif;
   color: #2873b1;
   font-weight: 500;
+  margin-top: 20px;
+}
+
+.home-section h2.main{
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 3px;
+}
+
+.grid div {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 20px 10px;
+  border: 1px solid  #0000003a;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.grid div:active {
+  background-color: rgba(0, 0, 0, 0.020);
+  scale: .95;
+  transition: .3;
 }
 
 .products-inline {
