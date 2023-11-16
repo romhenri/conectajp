@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import icon_search from '../assets/search-svgrepo-com.svg'
 import SearchBar from '../components/SearchBar'
@@ -12,6 +12,7 @@ interface StorePageProps {
 
 const StorePage: React.FC<StorePageProps> =
   ({data}) => {
+  const [isFirstTime, setIsFirstTime] = useState(true)
   
   const navigate = useNavigate();
 
@@ -19,16 +20,18 @@ const StorePage: React.FC<StorePageProps> =
     // Navigate to "name"
     const handleProductCardClick = (id: number) => {
       navigate(`/loja/produto/${id}`);
-  }
+    }
     // Add "EventListener" to all cards
     const productsCards = document.querySelectorAll('.productCard');
     productsCards.forEach((card, index) => {
+      if (!isFirstTime) return
       card.addEventListener('click', () => {
         const idAttr = card.getAttribute('data-id')
         if (idAttr) {
           handleProductCardClick(parseInt(idAttr, 10));
         }
       });
+      setIsFirstTime(false)
     });
 
     // Remove "EventListener" to all cards
