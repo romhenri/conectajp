@@ -8,6 +8,7 @@ import '../css/StorePage.css'
 import '../css/AccountPage.css'
 
 const CartPage= () => {
+  var total: number = 0
   const navigate = useNavigate();
   const [canRender, setCanRender] = useState(false);
   const [productsCards, setProductsCards] = useState(products);
@@ -28,8 +29,8 @@ const CartPage= () => {
         // console.log(productId, " skipped");
       }
     }
-    setProductsCards(productsInCart)
-    setCanRender(true)
+    setProductsCards(productsInCart);
+    setCanRender(true);
   })
   }, []);
 
@@ -64,6 +65,10 @@ const CartPage= () => {
     };
   }, [canRender]);
 
+  canRender && productsCards.map(item => (
+    total = total + item.price
+  ))
+
   return (
   <main className='cart-page'>
     <header className='page-header'>
@@ -87,6 +92,16 @@ const CartPage= () => {
               key={item.id}
             />
       ))}
+
+      <div className="cart-overview">
+        <div>
+          <strong>Total: </strong>
+          <span>
+            {total.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
+          </span>
+        </div>
+        <button>Comprar</button>
+      </div>
     </section>
   </main>)
 }
