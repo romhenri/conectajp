@@ -1,27 +1,61 @@
-# React + TypeScript + Vite
+# ConectaJP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![GitHub repo size](https://img.shields.io/github/repo-size/romhenri/conectajp?style=for-the-badge)
 
-Currently, two official plugins are available:
+<!-- <img width="100%" src="./banner-default.png" alt="exemplo imagem">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> [Descrição do Projeto].
 
-## Expanding the ESLint configuration
+<hr>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<div display="inline">
+<img width="32.8%" src="./banner-default.png" alt="exemplo imagem">
+<img width="32.8%" src="./banner-default.png" alt="exemplo imagem">
+<img width="32.8%" src="./banner-default.png" alt="exemplo imagem">
+</div> -->
 
-- Configure the top-level `parserOptions` property like this:
+<hr>
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### Ajustes e melhorias
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+-   [x] Mapa via Google Maps;
+-   [x] Experiência de Compra;
+-   [ ] Sistema de conta;
+
+<hr>
+
+### Linguagens e Tecnologias
+
+<div display="inline_block">
+<a href="https://github.com/romhenri/typescript" target="_blank"><img align="center" alt="TypeScript" height="54" width="72" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"></a>
+<a href="https://github.com/romhenri/javascript" target="_blank" alt="JavaScript"><img align="center" alt="JavaScript" height="54" width="72" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg"></a>
+<a href="https://github.com/romhenri/html" target="_blank"><img align="center" alt="HTML" height="54" width="72" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"></a>
+<a href="https://github.com/romhenri/css" target="_blank"><img align="center" alt="CSS" height="54" width="72" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"></a>
+<a href="https://github.com/romhenri/react" target="_blank"><img align="center" alt="React.js" height="54" width="72" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/></a>
+<a href="#" target="_blank"><img align="center" alt="Vite.js" height="54" width="72" src="https://github.com/romhenri/romhenri/raw/main/icons/vitejs.svg"/></a><a href="#" target="_blank">
+
+
+</a>
+
+</div>
+
+<hr>
+
+### Autoria
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/romhenri">
+        <img src="https://avatars.githubusercontent.com/u/123867521?v=4" width="200px;" alt="Foto do Romulo Henri no GitHub"/><br>
+        <p>
+          <b>Rômulo Henri</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+        <p>Projeto desenvolvido para Estudar e Praticar o uso de React com TypeScript.</p> <br>
+        <sub>Iniciado: Dia 20, do Outubro (2023)</sub>
+    </td>
+  </tr>
+</table>
