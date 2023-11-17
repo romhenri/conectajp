@@ -2,7 +2,7 @@ import localforage from "localforage";
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { products }  from '../data/productsData.ts'
-import ProductCard from '../components/ProductCard'
+import RequestCard from '../components/RequestCard'
 import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
@@ -76,7 +76,7 @@ const RequestsPage= () => {
     <section className='middle-section'>
       {canRender &&
           productsCards.map(item => (
-            <ProductCard
+            <RequestCard
               title={item.name}
               productId={item.id}
               desc={item.desc}
