@@ -20,6 +20,16 @@
   align-items: center;
 }
 
+.cart-page section,
+.requests-page section,
+.favorites-page section {
+  display: block;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding-top: 12px;
+  padding-bottom: 200px;
+}
+
 .account-page .middle-section {
   height: 150px;
   box-sizing: border-box;
@@ -79,7 +89,8 @@
 
 .account-page .middle-section .option {
   border: 1px solid #0000003a;
-  width: 140px;
+  width: 210px;
+  padding: 15px 0px;
   height: 30px;
   border-radius: 5px;
   box-sizing: border-box;

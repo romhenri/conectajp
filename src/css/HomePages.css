@@ -1,5 +1,10 @@
-section {
+.home-section {
   height: 100%;
+  display: block;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding-top: 12px;
+  padding-bottom: 200px;
 }
 
 .home-section h2{
@@ -53,13 +58,11 @@ section {
   border-radius: 10px;
 }
 
-@media (max-width: 800px) {
-  .products-inline:nth-child(even) {
-    justify-content: flex-start;
-  }
-  
-  .products-inline:nth-child(odd) {
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-  }
+.products-inline:nth-child(even) {
+  justify-content: flex-start;
+}
+
+.products-inline:nth-child(odd) {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
 }

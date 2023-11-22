@@ -52,7 +52,7 @@ const MyAccountPage= () => {
         <div className='option'
           onClick={editUsername}
         >
-          Editar Perfil
+          Alterar nome de usuário
         </div>
       </div>
     </section>
