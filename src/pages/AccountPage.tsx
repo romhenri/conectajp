@@ -1,17 +1,35 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-import DefaultProfile from '../assets/default-profile.png'
-import icon_star from '../assets/star-30.png'
-import '../css/pages.css'
-import '../css/StorePage.css'
-import '../css/AccountPage.css'
+import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import {saveUsername} from '../scripts/handleStorage';
+import localforage from 'localforage';
+import DefaultProfile from '../assets/default-profile.png';
+import icon_star from '../assets/star-30.png';
+import '../css/pages.css';
+import '../css/StorePage.css';
+import '../css/AccountPage.css';
 
 const MyAccountPage= () => {
+  const [username, setUsername] = useState<string>("default");
+
   const navigate = useNavigate();
 
-  const goToCartPage = () => {navigate('carrinho')}
-  const goToRequestsPage = () => {navigate('pedidos')}
-  const goToFavoritesPage = () => {navigate('favoritos')}
+  const goToCartPage = () => {navigate('carrinho')};
+  const goToRequestsPage = () => {navigate('pedidos')};
+  const goToFavoritesPage = () => {navigate('favoritos')};
+
+  const editUsername = () => {
+    const newUserName = window.prompt("Insira o seu novo nome de usuário:");
+    if (!newUserName) return;
+    setUsername(newUserName);
+    saveUsername(newUserName);
+  }
+
+  localforage.getItem('username', function (err, value) {
+      if (!value) return;
+      if (value === "") return;
+      setUsername(`${value}`);
+    }
+  );
 
   return (
   <main className='account-page'>
@@ -25,13 +43,17 @@ const MyAccountPage= () => {
       </div>
 
       <div className="content-box">
-        <h2>Usuário Padrão</h2>
+        <h2>@{username}</h2>
         
         <div className="review-box">
           <img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={icon_star}/><img src={icon_star}/>
         </div>
 
-        <div className='option'>Editar Perfil</div>
+        <div className='option'
+          onClick={editUsername}
+        >
+          Editar Perfil
+        </div>
       </div>
     </section>
 

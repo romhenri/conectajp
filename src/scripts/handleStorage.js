@@ -21,7 +21,13 @@ localforage.getItem('requests', function (err, value) {
   };
   }
 );
-
+localforage.getItem('username', function (err, value) {
+  if(!value) {
+    localforage.setItem('username', "", function (err) {
+    })
+  };
+  }
+);
 // @ts-nocheck
 // Exports
 export function getCart() {
@@ -72,6 +78,9 @@ export function removeFromFavorites(item) {
 
     localforage.setItem('favorites', value, function (err) {})
   })
+}
+export function saveUsername(username) {
+  localforage.setItem('username', username, function (err) {})
 }
 
 export function getRequests() {
