@@ -6,6 +6,7 @@ import ProductCard from '../components/ProductCard'
 import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
+import '../css/CartPage.css'
 
 const CartPage= () => {
   var total: number = 0

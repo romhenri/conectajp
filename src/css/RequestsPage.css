@@ -1,0 +1,29 @@
+.productCard.request-card .status-box {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  width: 90%;
+}
+
+.productCard.request-card .status-box > div:nth-child(1){
+  border-radius: 10px 0px 0px 10px;
+}
+.productCard.request-card .status-box > div:nth-child(3){
+  border-radius: 0px 10px 10px 0px;
+}
+.productCard.request-card .status-box > div:nth-child(even){
+  border-radius: 0px;
+  border-left: 2px solid hsla(0, 0%, 0%, 0.15);
+  border-right: 2px solid hsla(0, 0%, 0%, 0.15);
+}
+
+.productCard.request-card .status-box > div {
+  flex-grow: 1;
+  height: 5px;
+  background-color: #c4d3cc;
+  border-radius: 10px;
+}
+
+.productCard.request-card .status-box > div.active {
+  background-color: #5ad38c;
+}

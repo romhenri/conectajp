@@ -1,0 +1,29 @@
+.cart-overview {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  border: 1px solid #0000003a;
+  padding: 10px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: rgba(240, 248, 255, 0.55);
+}
+
+.cart-overview div span{ 
+  margin-left: 5px;
+}
+
+.cart-overview div {
+  flex-grow: 1;
+}
+
+.cart-overview button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  background-color:  #74e2a2;
+  color: #0000009a;
+}

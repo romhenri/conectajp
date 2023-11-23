@@ -6,6 +6,7 @@ import RequestCard from '../components/RequestCard'
 import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
+import '../css/RequestsPage.css'
 
 const RequestsPage= () => {
   const navigate = useNavigate();
