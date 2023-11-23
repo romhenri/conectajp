@@ -78,7 +78,9 @@ const MyAccountPage= () => {
         Ajustes
       </div>
 
-      <div className="option">
+      <div className="option"
+        onClick={() => {navigate('avaliacoes')}}
+      >
         Suas Avaliações
       </div>
 
@@ -87,10 +89,25 @@ const MyAccountPage= () => {
       </div>
 
       <hr />
-      <div className="option">
-        Central de Ajuda</div>
-      <div className="option">Sugestões</div>
-      <div className="option">Termos de Uso</div>
+
+      <div className="option"
+        onClick={() => {navigate('central-de-ajuda')}}
+      >
+        Central de Ajuda
+      </div>
+
+      <div className="option"
+        
+      >
+        Sugestões
+      </div>
+
+      <div className="option"
+        onClick={() => {navigate('termos-de-uso')}}
+      >
+        Termos de Uso
+      </div>
+      
       <hr />
       <footer>
       </footer>

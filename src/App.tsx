@@ -8,6 +8,7 @@ import AccountPage from './pages/AccountPage'
 import CartPage from './pages/CartPage'
 import RequestsPage from './pages/RequestsPage'
 import FavoritesPage from './pages/FavoritesPage'
+import Page from './pages/Page.tsx'
 import './scripts/getClientInfo.js'
 import './scripts/handleStorage.js'
 import './App.css'
@@ -38,6 +39,67 @@ function App() {
             <Route path='carrinho' element={<CartPage/>}/>
             <Route path='pedidos' element={<RequestsPage/>}/>
             <Route path='favoritos' element={<FavoritesPage/>}/>
+
+            <Route 
+              path='avaliacoes'
+              element={
+                <Page 
+                  title='Avaliações'
+                >
+                  <p>
+                    Aqui aparecerão suas avaliações quando forem aprovadas.
+                  </p>
+                </Page>
+              }
+            />
+            <Route 
+              path='central-de-ajuda'
+              element={
+                <Page 
+                  title='Central de Ajuda'
+                >
+                  <p>
+                    Nessa página, você encontrará todas as informações necessárias para aproveitar ao máximo o nosso aplicativo. Seja você um novo usuário buscando entender como o ConectJP funciona ou um usuário experiente procurando dicas avançadas, estamos aqui para ajudar!
+                  </p>
+                </Page>
+              }
+            />
+            <Route 
+              path='termos-de-uso'
+              element={
+                <Page 
+                  title='Termos de Uso'
+                  styleClass='terms-page'
+                >
+                  <p>
+                    <strong>1. Introdução</strong><br/>
+                    Bem-vindo ao ConectJP! Ao utilizar nosso aplicativo de comércio eletrônico, você concorda com estes Termos de Uso. Por favor, leia-os atentamente.
+                  </p><p>
+                    <strong>2. Serviços Oferecidos</strong><br/>
+                    O ConectJP proporciona uma plataforma para comprar e vender produtos de diversos fornecedores. Não nos responsabilizamos pela qualidade, segurança ou legalidade dos itens listados.
+                  </p><p>
+                    <strong>3. Cadastro</strong><br/>
+                    Para utilizar nossos serviços, é necessário criar uma conta. Você concorda em fornecer informações verdadeiras e atualizadas, e manter a confidencialidade de sua senha.
+                  </p><p>
+                    <strong>4. Privacidade</strong><br/>
+                    Sua privacidade é importante para nós. Nossa Política de Privacidade explica como coletamos e utilizamos suas informações pessoais.
+                  </p><p>
+                    <strong>5. Direitos de Propriedade Intelectual</strong><br/>
+                    Todo o conteúdo do ConectJP, incluindo textos, gráficos e logotipos, é protegido por direitos autorais e pertence ao ConectJP ou a seus fornecedores.
+                  </p><p>
+                    <strong>6. Uso do Aplicativo</strong><br/>
+                    Você concorda em não utilizar o aplicativo para atividades ilegais, enganosas, maliciosas ou discriminatórias. O ConectJP reserva-se o direito de suspender ou terminar contas que violem esses termos.
+                  </p><p>
+                    <strong>7. Limitação de Responsabilidade</strong><br/>
+                    O ConectJP não será responsável por quaisquer danos diretos, indiretos, incidentais ou consequentes resultantes do uso ou da incapacidade de usar nossos serviços.
+                  </p><p>
+                    <strong>8. Lei Aplicável e Jurisdição</strong><br/>
+                    Estes termos são regidos pelas leis do país onde o aplicativo é baseado. Qualquer disputa será submetida à jurisdição exclusiva dos tribunais desse país.
+                  </p>
+                </Page>
+              }
+            />
+
           </Route>
         </Routes>
         <Menu/>

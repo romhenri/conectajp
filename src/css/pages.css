@@ -33,3 +33,11 @@ section {
 .home-page button {
   opacity: 0;
 }
+
+.terms-page {
+  padding: 0px 30px;
+}
+.terms-page p {
+  margin-bottom: 15px;
+  text-align: start;
+}
