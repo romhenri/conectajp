@@ -2,7 +2,9 @@ import localforage from "localforage";
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { products }  from '../data/productsData.ts'
+import { addArrayToRequests, removeArrayFromCart } from '../scripts/handleStorage.js'
 import ProductCard from '../components/ProductCard'
+import ModalManager from '../components/ModalManager.js'; 
 import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
@@ -13,6 +15,11 @@ const CartPage= () => {
   const navigate = useNavigate();
   const [canRender, setCanRender] = useState(false);
   const [productsCards, setProductsCards] = useState(products);
+  const [cart, setCart] = useState<number[]>([]);
+
+  const [isModalRequestOpen, setIsModalRequestOpen] = useState(false);
+
+  const closeModalRequest = () => setIsModalRequestOpen(false);
 
   const returnStorePage = () => {navigate('..')}
 
@@ -21,6 +28,7 @@ const CartPage= () => {
     // console.log("getCart retornando ", value);
 
     const productsInCart = [...products];
+    setCart(value);
 
     for (let i = productsInCart.length - 1; i >= 0; i--) {
       const productId = productsInCart[i].id;
@@ -66,6 +74,13 @@ const CartPage= () => {
     };
   }, [canRender]);
 
+  const addCartToRequests = () => {
+    addArrayToRequests(cart);
+    removeArrayFromCart(cart);
+    setIsModalRequestOpen(true);
+    setCanRender(false);
+  }
+
   canRender && productsCards.map(item => (
     total = total + item.price
   ))
@@ -101,9 +116,15 @@ const CartPage= () => {
             {total.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
           </span>
         </div>
-        <button>Comprar</button>
+        <button onClick={addCartToRequests}>Comprar</button>
       </div>
     </section>
+
+    <ModalManager
+      type="Request"
+      isModalOpen={isModalRequestOpen}
+      closeModal={closeModalRequest} 
+    />
   </main>)
 }
 

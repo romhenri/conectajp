@@ -12,7 +12,6 @@ const RequestsPage= () => {
   const navigate = useNavigate();
   const [canRender, setCanRender] = useState(false);
   const [productsCards, setProductsCards] = useState(products);
-
   const returnStorePage = () => {navigate('..')}
 
   useEffect(() => {

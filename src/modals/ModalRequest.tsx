@@ -15,7 +15,7 @@ const modalAddToCart: React.FC<ModalProps> = ({ onClose }) => {
       <div className='modal'>
         <h2>Pedido feito!</h2>
         <hr />
-        <p>Confira o item nos seus pedidos.</p>
+        <p>Confira o(s) item(s) nos seus pedidos.</p>
 
         <div className="flexLine">
           <button onClick={goToRequestsPage}>
