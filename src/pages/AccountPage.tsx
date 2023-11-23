@@ -84,7 +84,9 @@ const MyAccountPage= () => {
         Suas Avaliações
       </div>
 
-      <div className="option">
+      <div className="option"
+        onClick={() => {navigate('reembolsos-e-devolucoes')}}
+      >
         Reembolsos e Devoluções
       </div>
 
@@ -97,7 +99,7 @@ const MyAccountPage= () => {
       </div>
 
       <div className="option"
-        
+        onClick={() => {navigate('sugestoes')}}
       >
         Sugestões
       </div>

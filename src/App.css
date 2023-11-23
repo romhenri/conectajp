@@ -41,8 +41,8 @@ section {
 }
 
 section > p {
-  margin-top: 10px;
   opacity: .8;
+  margin: 10px 20px;
 }
 
 header.page-header h1 {

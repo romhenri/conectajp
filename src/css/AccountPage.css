@@ -41,13 +41,14 @@
 }
 
 .account-page section.account-section {
+  height: 65% !important;
   position: absolute;
   overflow-y: scroll;
   display: block;
   /* display: none; */
-  max-width: 100%;
+  /* max-width: 100%; */
   padding-top: 16px;
-  padding-bottom: 200px;
+  padding-bottom: 120px;
 }
 
 .account-page .image-box {

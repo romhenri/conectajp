@@ -71,7 +71,7 @@ const StorePage: React.FC<StorePageProps> =
           key={item.id}
         />
       ))}
-
+      <hr />
     </section>
   </main>)
 }

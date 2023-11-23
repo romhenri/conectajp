@@ -8,6 +8,7 @@ import AccountPage from './pages/AccountPage'
 import CartPage from './pages/CartPage'
 import RequestsPage from './pages/RequestsPage'
 import FavoritesPage from './pages/FavoritesPage'
+import SuggestionsPage from './pages/SuggestionsPage.tsx'
 import Page from './pages/Page.tsx'
 import './scripts/getClientInfo.js'
 import './scripts/handleStorage.js'
@@ -40,6 +41,8 @@ function App() {
             <Route path='pedidos' element={<RequestsPage/>}/>
             <Route path='favoritos' element={<FavoritesPage/>}/>
 
+            <Route path='sugestoes'element={<SuggestionsPage/>}/>
+
             <Route 
               path='avaliacoes'
               element={
@@ -53,6 +56,18 @@ function App() {
               }
             />
             <Route 
+              path='reembolsos-e-devolucoes'
+              element={
+                <Page 
+                  title='Ajuda com Pedidos'
+                >
+                  <p>
+                    Aqui aparecerão seus processos de reembolsos e devoluções.
+                  </p>
+                </Page>
+              }
+            />
+            <Route 
               path='central-de-ajuda'
               element={
                 <Page 
@@ -60,6 +75,12 @@ function App() {
                 >
                   <p>
                     Nessa página, você encontrará todas as informações necessárias para aproveitar ao máximo o nosso aplicativo. Seja você um novo usuário buscando entender como o ConectJP funciona ou um usuário experiente procurando dicas avançadas, estamos aqui para ajudar!
+                  </p>
+                  <p>
+                    Explique seu problema em: <br/>
+                    <a href="mailto:contato.conectajp@gmail.com">
+                      contato.conectajp@gmail.com
+                    </a>
                   </p>
                 </Page>
               }
