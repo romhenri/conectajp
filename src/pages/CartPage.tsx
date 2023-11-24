@@ -13,6 +13,7 @@ import '../css/CartPage.css'
 const CartPage= () => {
   var total: number = 0
   const navigate = useNavigate();
+  const [isEmpty, setIsEmpty] = useState(true);
   const [canRender, setCanRender] = useState(false);
   const [productsCards, setProductsCards] = useState(products);
   const [cart, setCart] = useState<number[]>([]);
@@ -39,6 +40,9 @@ const CartPage= () => {
       }
     }
     setProductsCards(productsInCart);
+    if (productsInCart.length > 0) {
+      setIsEmpty(false);
+    }
     setCanRender(true);
   })
   }, []);
@@ -79,6 +83,7 @@ const CartPage= () => {
     removeArrayFromCart(cart);
     setIsModalRequestOpen(true);
     setCanRender(false);
+    setIsEmpty(true);
   }
 
   canRender && productsCards.map(item => (
@@ -109,15 +114,24 @@ const CartPage= () => {
             />
       ))}
 
-      <div className="cart-overview">
-        <div>
-          <strong>Total: </strong>
-          <span>
-            {total.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
-          </span>
-        </div>
-        <button onClick={addCartToRequests}>Comprar</button>
-      </div>
+      {
+        !isEmpty && (
+          <div className="cart-overview">
+          <div>
+            <strong>Total: </strong>
+            <span>
+              {total.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
+            </span>
+          </div>
+          <button onClick={addCartToRequests}>Comprar</button>
+        </div>)
+      }
+
+      {
+        isEmpty && (
+          <p>Sem produtos no Carrinho.</p>
+        )
+      }
     </section>
 
     <ModalManager

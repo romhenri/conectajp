@@ -84,10 +84,6 @@
   height: 100%;
 }
 
-.option {
-  cursor: pointer;
-}
-
 .account-page .middle-section .option {
   border: 1px solid #0000003a;
   width: 210px;
@@ -137,6 +133,7 @@
   margin-bottom: 0px !important;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .options .option svg {

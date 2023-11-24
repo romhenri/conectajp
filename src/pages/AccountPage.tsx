@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {saveUsername} from '../scripts/handleStorage';
 import localforage from 'localforage';
+import Option from '../components/Option';
 import DefaultProfile from '../assets/default-profile.png';
 import icon_star from '../assets/star-30.png';
 import '../css/pages.css';
@@ -74,41 +75,37 @@ const MyAccountPage= () => {
     </div>
       <hr />
 
-      <div className="option">
-        Ajustes
-      </div>
-
-      <div className="option"
+      <Option
+        title='Configurações'
+        onClick={() => {navigate('configuracoes')}}
+      />
+        
+      <Option
+        title='Suas Avaliações'
         onClick={() => {navigate('avaliacoes')}}
-      >
-        Suas Avaliações
-      </div>
+      />
 
-      <div className="option"
+      <Option
+        title='Reembolsos e Devoluções'
         onClick={() => {navigate('reembolsos-e-devolucoes')}}
-      >
-        Reembolsos e Devoluções
-      </div>
+      />
 
       <hr />
 
-      <div className="option"
+      <Option
+        title='Central de Ajuda'
         onClick={() => {navigate('central-de-ajuda')}}
-      >
-        Central de Ajuda
-      </div>
+      />
 
-      <div className="option"
+      <Option
+        title='Sugestões'
         onClick={() => {navigate('sugestoes')}}
-      >
-        Sugestões
-      </div>
+      />
 
-      <div className="option"
+      <Option
+        title='Termos de Uso'
         onClick={() => {navigate('termos-de-uso')}}
-      >
-        Termos de Uso
-      </div>
+      />
       
       <hr />
       <footer>

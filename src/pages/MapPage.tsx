@@ -52,9 +52,10 @@ const MapPage = () => {
 
     const markersPositions = [
       {lat: -7.1629958568226155, lng: -34.825555030682175},
-      {lat: -7.1679343, lng: -34.8314096},
-      {lat: -7.1664928, lng: -34.8311878},
-      {lat: -7.1645947, lng: -34.8313998}
+      {lat: -7.1679343, lng: -34.8312066}, // Cleide Cosméticos
+      {lat: -7.1664507, lng: -34.8311878}, // Pet Estética
+      {lat: -7.1645947, lng: -34.83125}, // Naturales
+      {lat: -7.1675638, lng: -34.8315124} // Damião Bike
     ]
 
     makeMarkers(markersPositions)
@@ -66,6 +67,7 @@ const MapPage = () => {
           {
             map: map,
             position: positions[i],
+            icon: "http://1.bp.blogspot.com/_GZzKwf6g1o8/S6xwK6CSghI/AAAAAAAAA98/_iA3r4Ehclk/s1600/marker-green.png",
           }
         )
       }

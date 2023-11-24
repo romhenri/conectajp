@@ -8,6 +8,7 @@ import AccountPage from './pages/AccountPage'
 import CartPage from './pages/CartPage'
 import RequestsPage from './pages/RequestsPage'
 import FavoritesPage from './pages/FavoritesPage'
+import ConfigPage from './pages/ConfigPage.tsx'
 import SuggestionsPage from './pages/SuggestionsPage.tsx'
 import Page from './pages/Page.tsx'
 import './scripts/getClientInfo.js'
@@ -41,6 +42,7 @@ function App() {
             <Route path='pedidos' element={<RequestsPage/>}/>
             <Route path='favoritos' element={<FavoritesPage/>}/>
 
+            <Route path='configuracoes'element={<ConfigPage/>}/>
             <Route path='sugestoes'element={<SuggestionsPage/>}/>
 
             <Route 
