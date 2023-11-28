@@ -2,7 +2,8 @@ type IInput = {
   type: string,
   label: string,
   id?: string,
-  placeholder?: string
+  placeholder?: string;
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = ({ type, label, id, placeholder, ...props}: IInput) => {

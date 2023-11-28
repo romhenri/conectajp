@@ -21,9 +21,23 @@ localforage.getItem('requests', function (err, value) {
   };
   }
 );
+localforage.getItem('name', function (err, value) {
+  if(!value) {
+    localforage.setItem('name', "", function (err) {
+    })
+  };
+  }
+);
 localforage.getItem('username', function (err, value) {
   if(!value) {
     localforage.setItem('username', "", function (err) {
+    })
+  };
+  }
+);
+localforage.getItem('email', function (err, value) {
+  if(!value) {
+    localforage.setItem('email', "", function (err) {
     })
   };
   }
@@ -134,9 +148,6 @@ export function removeFromFavorites(item: number) {
     localforage.setItem('favorites', value, function (err) {})
   })
 }
-export function saveUsername(username: string) {
-  localforage.setItem('username', username, function (err) {})
-}
 // General
 export function deleteAllData() {
   localforage.setItem('cart', [], function (err) {})
@@ -146,4 +157,14 @@ export function deleteAllData() {
 
   console.log("Deleted");
   
+}
+// Other
+export function saveName(name: string) {
+  localforage.setItem('name', name, function (err) {})
+}
+export function saveUsername(username: string) {
+  localforage.setItem('username', username, function (err) {})
+}
+export function saveEmail(email: string) {
+  localforage.setItem('email', email, function (err) {})
 }
