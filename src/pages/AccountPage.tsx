@@ -4,7 +4,7 @@ import {saveUsername} from '../scripts/handleStorage';
 import localforage from 'localforage';
 import Option from '../components/Option';
 import DefaultProfile from '../assets/default-profile.png';
-import icon_star from '../assets/star-30.png';
+import icon_star from '../assets/star-100.png';
 import '../css/pages.css';
 import '../css/StorePage.css';
 import '../css/AccountPage.css';

@@ -5,7 +5,12 @@ import { addToCart, addToFavorites, removeFromFavorites, addToRequests } from '.
 import ModalManager from '../components/ModalManager.js'; 
 import icon_heart from '../assets/heart.svg'
 import icon_full_heart from '../assets/full-heart.svg'
-import icon_star from '../assets/star-30.png'
+import icon_star from '../assets/star-100.png'
+import icon_0 from '../assets/star-0.png'
+import icon_25 from '../assets/star-25of100.png'
+import icon_35 from '../assets/star-35of100.png'
+import icon_50 from '../assets/star-50of100.png'
+import icon_75 from '../assets/star-75of100.png'
 import '../css/pages.css'
 import '../css/StorePage.css'
 import '../css/AccountPage.css'
@@ -30,17 +35,40 @@ const styledAlignedBox = {
 }
 
 function getStars(number: number | undefined) {
-  if (!number) return
-  const starsArray = []
-  number = Math.trunc(number)
+  if (!number) return;
+  const starsArray = [];
+  const numberFullStars = Math.trunc(number);
+  const lastStar = Number(Math.abs(number % 1).toFixed(1));
 
-  for(let i = 0; i < number; i++) {
+  for(let i = 0; i < numberFullStars; i++) {
     starsArray.push((
       <img src={icon_star} style={styledStar} key={i}/>
-    ))
-  }
+    ));
+  };
 
-  return starsArray
+  if (lastStar <= .1){
+    starsArray.push((
+      <img src={icon_0} style={styledStar}/>
+    ));
+  } else if (lastStar <= .2) {
+    starsArray.push((
+      <img src={icon_25} style={styledStar}/>
+    ));
+  } else if (lastStar <= .3) {
+    starsArray.push((
+      <img src={icon_35} style={styledStar}/>
+    ));
+  } else if (lastStar <= .6) {
+    starsArray.push((
+      <img src={icon_50} style={styledStar}/>
+    ));
+  } else if (lastStar <= .8) {
+    starsArray.push((
+      <img src={icon_75} style={styledStar}/>
+    ));
+  };
+
+  return starsArray;
 }
 
 const ProductPage: React.FC<ProductPageProps> = ({data}) => {

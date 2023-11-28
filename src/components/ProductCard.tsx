@@ -1,4 +1,4 @@
-import star from '../assets/star-30.png'
+import star from '../assets/star-100.png'
 
 interface ProductCardProps {
   image: any;
