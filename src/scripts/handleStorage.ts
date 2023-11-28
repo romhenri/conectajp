@@ -159,11 +159,26 @@ export function deleteAllData() {
   
 }
 // Other
+export function getName() {
+  localforage.getItem('name', function (err, value) {
+    return value
+  })
+}
 export function saveName(name: string) {
   localforage.setItem('name', name, function (err) {})
 }
+export function getUserame() {
+  localforage.getItem('username', function (err, value) {
+    return value
+  })
+}
 export function saveUsername(username: string) {
   localforage.setItem('username', username, function (err) {})
+}
+export function getEmail() {
+  localforage.getItem('email', function (err, value) {
+    return value
+  })
 }
 export function saveEmail(email: string) {
   localforage.setItem('email', email, function (err) {})

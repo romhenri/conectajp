@@ -1,24 +1,42 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { getName, getEmail } from '../scripts/handleStorage'
 import emailjs from '@emailjs/browser'
+import localforage from 'localforage'
 import styled from 'styled-components'
 import Page from './Page'
 
 const Form = styled.form`
   margin-top: 10px;
-`
 
-const InputText = styled.input`
-  padding: 10px;
-  width: 90%;
-  border-radius: 10px;
-  margin: 5px 0px;
-  border: none;
-  background-color: rgba(240, 248, 255, 0.85);
-
-  &:focus {
-    outline: 1px solid #0000004e;
+  & {
+    .error {
+    background-color: rgba(255, 0, 0, 0.10);
+    border: 2px solid rgba(255, 0, 0, 0.2);
+    padding: 8px !important;
+    border-radius: 5px;
+    margin: 10px 10px;
+    }
+    .sucess {
+    background-color: rgba(19, 184, 27, 0.1);
+    border: 2px solid rgba(43, 175, 3, 0.2);
+    padding: 8px !important;
+    border-radius: 5px;
+    margin: 10px 10px;
+    }
   }
 `
+// const InputText = styled.input`
+//   padding: 10px;
+//   width: 90%;
+//   border-radius: 10px;
+//   margin: 5px 0px;
+//   border: none;
+//   background-color: rgba(240, 248, 255, 0.85);
+
+//   &:focus {
+//     outline: 1px solid #0000004e;
+//   }
+// `
 const TextArea = styled.textarea`
   padding: 10px;
   width: 90%;
@@ -52,37 +70,52 @@ const Button = styled.input`
 `
 
 const SuggestionsPage = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const [frontError, setFrontError] = useState<string | null>(null);
+  const [frontSucess, setFrontSucess] = useState<string | null>(null);
 
   function sendEmail(e: any) {
     e.preventDefault()
 
     if (name === '' || email === '' || message === '') {
-      alert("Preencha todos os campos!")
+      setFrontError("Preencha todos os campos!")
       return
     }
 
     const serviceID = "service_ka16jud"; // OK
     const templateID = "template_qujdi5p"; // OK
     const templateParams = {
-      from_name: name + ' - ' + email,
-      message: message,
+      from_name: name,
+      message: `[${name} - ${email} (${new Date()})]
+      
+      ${message}
+      `,
     }
     const publicKey = "hDi6FIb-8wMtr7zuy"; // OK
 
     emailjs.send(serviceID, templateID, templateParams, publicKey)
     .then((response) => {
-      alert("Sugestão enviada com sucesso!")
+      setFrontSucess("Sugestão enviada com sucesso!");
       console.log(`Email enviado com status ${response.status}!`);
-      setName('')
-      setEmail('')
-      setMessage('')
+      setName('');
+      setEmail('');
+      setMessage('');
     }, (err) => {
       console.log(err);
     })
   }
+
+  useEffect(() => {
+    localforage.getItem('name', function (err, value: any) {
+      setName(value);
+    })
+    localforage.getItem('email', function (err, value: any) {
+      setEmail(value);
+    })
+  })
 
   return (
     <Page title='Sugestões'>
@@ -90,21 +123,21 @@ const SuggestionsPage = () => {
       <p>Envie suas sugestões para atualizações futuras do ConectaJP:</p>
 
       <Form className="form" onSubmit={sendEmail}>
-        <InputText 
+        {/* <InputText 
           className="input"
           type="text"
           placeholder="Digite seu nome"
           onChange={(e) => setName(e.target.value)}
           value={name}
-        />
+        /> */}
         
-        <InputText
+        {/* <InputText
           className="input"
           type="text"
           placeholder="Digite seu email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-        />
+        /> */}
 
         <TextArea
           className="textarea"
@@ -112,6 +145,17 @@ const SuggestionsPage = () => {
           onChange={(e) => setMessage(e.target.value)}
           value={message}
         />
+
+        <div>
+          {frontError && !frontSucess && (
+          <p className='error'>{frontError}</p>
+          )}
+        </div>
+        <div>
+          {frontSucess && (
+          <p className='sucess'>{frontSucess}</p>
+          )}
+        </div>
 
         <Button className="button" type="submit" value="Enviar" />
       </Form>

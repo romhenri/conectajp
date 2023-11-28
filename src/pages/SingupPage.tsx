@@ -45,8 +45,9 @@ const Form = styled.form`
   }
 
   .error {
-    background-color: rgba(255, 0, 0, 0.2);
-    padding: 5px 10px;
+    background-color: rgba(255, 0, 0, 0.10);
+    border: 2px solid rgba(255, 0, 0, 0.2);
+    padding: 8px !important;
     border-radius: 5px;
   }
 `
@@ -58,14 +59,21 @@ const SingupPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
 
+  const [frontError, setFrontError] = useState<string | null>(null);
+
   const handleSubmit = () => {
     console.log("Submitting...");
 
-    if (username === "" || name === "" || email === "") return;
+    if (username === "" || name === "" || email === "") {
+      setFrontError("Preencha todos os Campos!");
+
+      return
+    }
+
     saveName(name);
     saveUsername(username);
     saveEmail(email);
-    navigate('..');
+    navigate("..");
   }
 
   return (
@@ -110,7 +118,7 @@ const SingupPage = () => {
           />
 
           <div>
-            {/* {frontError && <p className='error'>{frontError}</p>} */}
+            {frontError && <p className='error'>{frontError}</p>}
           </div>
 
             <Button text={"Cadastrar"} onClick={handleSubmit}/>
