@@ -10,6 +10,7 @@ import RequestsPage from './pages/RequestsPage'
 import FavoritesPage from './pages/FavoritesPage'
 import ConfigPage from './pages/ConfigPage.tsx'
 import SuggestionsPage from './pages/SuggestionsPage.tsx'
+import SingupPage from './pages/SingupPage.tsx'
 import Page from './pages/Page.tsx'
 import './scripts/getClientInfo.js'
 import './scripts/handleStorage.js'
@@ -23,6 +24,7 @@ function App() {
      <Router>
         <Routes>
           <Route path='/' element={<HomePage data={products}/>}/>
+          <Route path='cadastro' element={<SingupPage/>}/>
 
           <Route path='loja'>
             <Route index element={<StorePage data={products}/>}/>
@@ -122,7 +124,6 @@ function App() {
                 </Page>
               }
             />
-
           </Route>
         </Routes>
         <Menu/>
