@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser'
 import localforage from 'localforage'
 import styled from 'styled-components'
 import Page from './Page'
+import ModalManager from '../components/ModalManager'
 
 const Form = styled.form`
   margin-top: 10px;
@@ -74,8 +75,14 @@ const SuggestionsPage = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+  // Front Errors States
   const [frontError, setFrontError] = useState<string | null>(null);
   const [frontSucess, setFrontSucess] = useState<string | null>(null);
+
+  // Modal States
+  const [isSangeup, setIsSangeup] = useState(true);
+  const [isModalSingupIsOpen, setIsModalSingupIsOpen] = useState(true);
+  const closeModalSingup = () => setIsModalSingupIsOpen(false);
 
   function sendEmail(e: any) {
     e.preventDefault()
@@ -110,56 +117,70 @@ const SuggestionsPage = () => {
 
   useEffect(() => {
     localforage.getItem('name', function (err, value: any) {
+      if (value === "") setIsSangeup(false);
       setName(value);
     })
     localforage.getItem('email', function (err, value: any) {
+      if (value === "") setIsSangeup(false);
       setEmail(value);
     })
   })
 
   return (
-    <Page title='Sugestões'>
-      <p>Prezamos pela qualidade e valorizamos demais a opinião de cada usuário, então estamos abertos para suas ideias!</p>
-      <p>Envie suas sugestões para atualizações futuras do ConectaJP:</p>
+    <>
+      <Page title='Sugestões'>
+        <p>Prezamos pela qualidade e valorizamos demais a opinião de cada usuário, então estamos abertos para suas ideias!</p>
+        <p>Envie suas sugestões para atualizações futuras do ConectaJP:</p>
 
-      <Form className="form" onSubmit={sendEmail}>
-        {/* <InputText 
-          className="input"
-          type="text"
-          placeholder="Digite seu nome"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-        /> */}
-        
-        {/* <InputText
-          className="input"
-          type="text"
-          placeholder="Digite seu email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        /> */}
+        <Form className="form" onSubmit={sendEmail}>
+          {/* <InputText 
+            className="input"
+            type="text"
+            placeholder="Digite seu nome"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          /> */}
+          
+          {/* <InputText
+            className="input"
+            type="text"
+            placeholder="Digite seu email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          /> */}
 
-        <TextArea
-          className="textarea"
-          placeholder="Digite sua mensagem..."
-          onChange={(e) => setMessage(e.target.value)}
-          value={message}
-        />
+          <TextArea
+            className="textarea"
+            placeholder="Digite sua mensagem..."
+            onChange={(e) => setMessage(e.target.value)}
+            value={message}
+          />
 
-        <div>
-          {frontError && !frontSucess && (
-          <p className='error'>{frontError}</p>
-          )}
-        </div>
-        <div>
-          {frontSucess && (
-          <p className='sucess'>{frontSucess}</p>
-          )}
-        </div>
+          <div>
+            {frontError && !frontSucess && (
+            <p className='error'>{frontError}</p>
+            )}
+          </div>
+          <div>
+            {frontSucess && (
+            <p className='sucess'>{frontSucess}</p>
+            )}
+          </div>
 
-        <Button className="button" type="submit" value="Enviar" />
-      </Form>
-    </Page>
+          <Button className="button" type="submit" value="Enviar" />
+        </Form>
+      </Page>
+
+      {
+        !isSangeup && (
+          <ModalManager
+            type="Singup"
+            isModalOpen={isModalSingupIsOpen}
+            closeModal={closeModalSingup} 
+          />
+        )
+      }
+    </>
   )
 }
 
