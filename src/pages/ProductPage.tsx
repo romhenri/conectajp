@@ -1,7 +1,6 @@
-import localforage from "localforage";
-import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
+import React, { useRef, useState, useLayoutEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
-import { addToCart, addToFavorites, removeFromFavorites, addToRequests } from '../scripts/handleStorage.js'
+import { getFavorites, addToCart, addToFavorites, removeFromFavorites, addToRequests } from '../scripts/handleStorage.js'
 import ModalManager from '../components/ModalManager.js'; 
 import icon_heart from '../assets/heart.svg'
 import icon_full_heart from '../assets/full-heart.svg'
@@ -110,13 +109,17 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
     }
   }
   
-  useEffect(() => {
-    localforage.getItem('favorites', function (err, value: any) {
-      if (value.includes(numberID)) {
+  useLayoutEffect(() => {
+    getFavorites().then(favorites => {
+      if (!favorites) return;
+
+      if (favorites.includes(numberID)) {
         if(!favoriteButton.current) return
         favoriteButton.current.classList.add('active');
         favoriteButton.current.src = icon_full_heart;
       }
+
+      setFavorites(favorites);
     })
   }, []);
 
