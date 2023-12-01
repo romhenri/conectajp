@@ -1,13 +1,10 @@
-import localforage from "localforage";
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { products }  from '../data/productsData.ts'
-import { addArrayToRequests, removeArrayFromCart } from '../scripts/handleStorage.js'
+import { getCart, addArrayToRequests, removeArrayFromCart } from '../scripts/handleStorage.js'
 import ProductCard from '../components/ProductCard'
 import ModalManager from '../components/ModalManager.js'; 
 import '../css/pages.css'
-import '../css/StorePage.css'
-import '../css/AccountPage.css'
 import '../css/CartPage.css'
 
 const CartPage= () => {
@@ -15,8 +12,8 @@ const CartPage= () => {
   const navigate = useNavigate();
   const [isEmpty, setIsEmpty] = useState(true);
   const [canRender, setCanRender] = useState(false);
-  const [productsCards, setProductsCards] = useState(products);
   const [cart, setCart] = useState<number[]>([]);
+  const [productsCards, setProductsCards] = useState(products);
 
   const [isModalRequestOpen, setIsModalRequestOpen] = useState(false);
 
@@ -24,27 +21,23 @@ const CartPage= () => {
 
   const returnStorePage = () => {navigate('..')}
 
-  useEffect(() => {
-  localforage.getItem('cart', function (err, value: any) {
-    // console.log("getCart retornando ", value);
+  useLayoutEffect(() => {
+    getCart().then(cart => {
+      if (!cart) return;
+      setCart(cart);
 
-    const productsInCart = [...products];
-    setCart(value);
+      // Filter products to only are included in cart array from localforage
+      const productsInCart = products.filter(product => cart.includes(product.id));
 
-    for (let i = productsInCart.length - 1; i >= 0; i--) {
-      const productId = productsInCart[i].id;
-      if (!value.includes(productId)) {
-        productsInCart.splice(i, 1);
-      } else {
-        // console.log(productId, " skipped");
+      setProductsCards(productsInCart);
+      if (productsInCart.length > 0) {
+        setIsEmpty(false);
       }
-    }
-    setProductsCards(productsInCart);
-    if (productsInCart.length > 0) {
-      setIsEmpty(false);
-    }
-    setCanRender(true);
-  })
+      setProductsCards(productsInCart);
+      setCanRender(true);
+      }).catch(err => {
+        console.error(err);
+    });
   }, []);
 
   useEffect(() => {
@@ -82,6 +75,7 @@ const CartPage= () => {
     addArrayToRequests(cart);
     removeArrayFromCart(cart);
     setIsModalRequestOpen(true);
+    setProductsCards([]);
     setCanRender(false);
     setIsEmpty(true);
   }

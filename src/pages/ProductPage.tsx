@@ -45,26 +45,28 @@ function getStars(number: number | undefined) {
       <img src={icon_star} style={styledStar} key={i}/>
     ));
   };
-
+  // It s nescery to add a key to the last star, because the react demands unique keys to all
+  const lastKey = numberFullStars + 1;
+  
   if (lastStar <= .1){
     starsArray.push((
-      <img src={icon_0} style={styledStar}/>
+      <img src={icon_0} style={styledStar} key={lastKey}/>
     ));
   } else if (lastStar <= .2) {
     starsArray.push((
-      <img src={icon_25} style={styledStar}/>
+      <img src={icon_25} style={styledStar} key={lastKey}/>
     ));
   } else if (lastStar <= .3) {
     starsArray.push((
-      <img src={icon_35} style={styledStar}/>
+      <img src={icon_35} style={styledStar} key={lastKey}/>
     ));
   } else if (lastStar <= .6) {
     starsArray.push((
-      <img src={icon_50} style={styledStar}/>
+      <img src={icon_50} style={styledStar} key={lastKey}/>
     ));
   } else if (lastStar <= .8) {
     starsArray.push((
-      <img src={icon_75} style={styledStar}/>
+      <img src={icon_75} style={styledStar} key={lastKey}/>
     ));
   };
 
