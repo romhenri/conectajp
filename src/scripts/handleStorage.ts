@@ -43,11 +43,13 @@ localforage.getItem('email', function (err, value) {
   }
 );
 // Cart
-export function getCart() {
-  localforage.getItem('cart', function (err, value) {
-    // console.log("getCart retornando ", value);
-    return value
-  })
+export function getCart(): Promise<number[] | null> {
+  return new Promise((resolve, reject) => {
+    localforage.getItem('cart', function (err, value: number[] | null) {
+      if (err) reject(err);
+      else resolve(value);
+    });
+  });
 }
 export function addToCart(item: number) {
   localforage.getItem('cart', function (err, value: number[]|null) {
@@ -82,11 +84,13 @@ export function removeArrayFromCart(array: number[]) {
   })
 }
 // Requests
-export function getRequests() {
-  localforage.getItem('requests', function (err, value: number[]|null) {
-    // console.log("getCart retornando ", value);
-    return value
-  })
+export function getRequests(): Promise<number[] | null> {
+  return new Promise((resolve, reject) => {
+    localforage.getItem('requests', function (err, value: number[] | null) {
+      if (err) reject(err);
+      else resolve(value);
+    });
+  });
 }
 export function addToRequests(item: number) {
   localforage.getItem('requests', function (err, value: number[]|null) {
@@ -161,26 +165,35 @@ export function deleteAllData() {
   
 }
 // Other
-export function getName() {
-  localforage.getItem('name', function (err, value) {
-    return value
-  })
+export function getName(): Promise<string | null> {
+  return new Promise((resolve, reject) => {
+    localforage.getItem('name', function (err, value: string | null) {
+      if (err) reject(err);
+      else resolve(value);
+    });
+  });
 }
 export function saveName(name: string) {
   localforage.setItem('name', name, function (err) {})
 }
-export function getUserame() {
-  localforage.getItem('username', function (err, value) {
-    return value
-  })
+export function getUsername(): Promise<string | null> {
+  return new Promise((resolve, reject) => {
+    localforage.getItem('username', function (err, value: string | null) {
+      if (err) reject(err);
+      else resolve(value);
+    });
+  });
 }
 export function saveUsername(username: string) {
   localforage.setItem('username', username, function (err) {})
 }
-export function getEmail() {
-  localforage.getItem('email', function (err, value) {
-    return value
-  })
+export function getEmail(): Promise<string | null> {
+  return new Promise((resolve, reject) => {
+    localforage.getItem('email', function (err, value: string | null) {
+      if (err) reject(err);
+      else resolve(value);
+    });
+  });
 }
 export function saveEmail(email: string) {
   localforage.setItem('email', email, function (err) {})
