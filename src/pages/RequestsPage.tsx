@@ -1,35 +1,33 @@
-import localforage from "localforage";
-import { useEffect, useState } from 'react'
+import { getRequests } from "../scripts/handleStorage.ts";
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { products }  from '../data/productsData.ts'
 import RequestCard from '../components/RequestCard'
 import '../css/pages.css'
-import '../css/StorePage.css'
 import '../css/AccountPage.css'
 import '../css/RequestsPage.css'
 
 const RequestsPage= () => {
   const navigate = useNavigate();
   const [canRender, setCanRender] = useState(false);
+  const [requests, setRequests] = useState<number[]>([]);
   const [productsCards, setProductsCards] = useState(products);
+
   const returnStorePage = () => {navigate('..')}
 
-  useEffect(() => {
-  localforage.getItem('requests', function (err, value: any) {
+  useLayoutEffect(() => {
+    getRequests().then(requests => {
+      if (!requests) return;
+      setRequests(requests);
 
-    const productsInCart = [...products];
+      // Filter products to only are included in requests array from localforage
+      const productsInRequests = products.filter(product => requests.includes(product.id));
 
-    for (let i = productsInCart.length - 1; i >= 0; i--) {
-      const productId = productsInCart[i].id;
-      if (!value.includes(productId)) {
-        productsInCart.splice(i, 1);
-      } else {
-        // console.log(productId, " skipped");
-      }
-    }
-    setProductsCards(productsInCart)
-    setCanRender(true)
-  })
+      setProductsCards(productsInRequests);
+      setCanRender(true);
+    }).catch(err => {
+      console.error(err);
+    });
   }, []);
 
   useEffect(() => {
