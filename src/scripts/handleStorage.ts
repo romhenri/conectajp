@@ -121,11 +121,13 @@ export function removeFromRequests(item: number) {
   })
 }
 // Favorites
-export function getFavorites() {
-  localforage.getItem('favorites', function (err, value: number[]|null) {
-    // console.log("getCart retornando ", value);
-    return value
-  })
+export function getFavorites(): Promise<number[]|null> {
+  return new Promise((resolve, reject) => {
+    localforage.getItem('favorites', function (err, value: number[] | null) {
+      if (err) reject(err);
+      else resolve(value);
+    });
+  });
 }
 export function addToFavorites(item: number) {
   localforage.getItem('favorites', function (err, value: number[]|null) {
