@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { products }  from '../data/productsData.ts'
-import { getCart, addArrayToRequests, removeArrayFromCart } from '../scripts/handleStorage.js'
+import { getCart, addToRequests, removeFromCart } from '../scripts/handleStorage.js'
 import ProductCard from '../components/ProductCard'
 import ModalManager from '../components/ModalManager.js'; 
 import '../css/pages.css'
@@ -72,8 +72,8 @@ const CartPage= () => {
   }, [canRender]);
 
   const addCartToRequests = () => {
-    addArrayToRequests(cart);
-    removeArrayFromCart(cart);
+    addToRequests(cart);
+    removeFromCart(cart);
     setIsModalRequestOpen(true);
     setProductsCards([]);
     setCanRender(false);

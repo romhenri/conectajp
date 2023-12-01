@@ -61,24 +61,23 @@ export function addToCart(item: number) {
     localforage.setItem('cart', value, function (err) {})
   })
 }
-export function removeFromCart(item: number) {
+export function removeFromCart(item: number|number[]) {
   localforage.getItem('cart', function (err, value: number[] | null) {
    if (!value) return;
-    if (!value.includes(item)) return;
 
-    const index = value.indexOf(item);
-    value.splice(index, 1);
-  })
-}
-export function removeArrayFromCart(array: number[]) {
-  localforage.getItem('cart', function (err, value: number[] | null) {
-    if (!value) return;
-
-    array.forEach((item)=> {
+    if (typeof item === "number") {
       if (!value.includes(item)) return;
       const index = value.indexOf(item);
       value.splice(index, 1);
-    })
+    } 
+    
+    else if (Array.isArray(item)) {
+      item.forEach((item)=> {
+        if (!value.includes(item)) return;
+        const index = value.indexOf(item);
+        value.splice(index, 1);
+      })
+    }
 
     localforage.setItem('cart', value, function (err) {})
   })
@@ -92,24 +91,21 @@ export function getRequests(): Promise<number[] | null> {
     });
   });
 }
-export function addToRequests(item: number) {
+export function addToRequests(item: number|number[]) {
   localforage.getItem('requests', function (err, value: number[]|null) {
     if (!value) return;
-    if (value.includes(item)) return;
-
-    value.push(item);
-
-    localforage.setItem('requests', value, function (err) {})
-  })
-}
-export function addArrayToRequests(array: number[]) {
-  localforage.getItem('requests', function (err, value: number[]|null) {
-    if (!value) return;
-
-    array.forEach((item)=> {
+    
+    if (typeof item === "number") {
       if (value.includes(item)) return;
       value.push(item);
-    })
+    }
+      
+    else if (Array.isArray(item)) {
+      item.forEach((item)=> {
+        if (value.includes(item)) return;
+        value.push(item);
+      })
+    }
 
     localforage.setItem('requests', value, function (err) {})
   })
