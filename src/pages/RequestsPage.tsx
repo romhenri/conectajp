@@ -9,6 +9,7 @@ import '../css/RequestsPage.css'
 
 const RequestsPage= () => {
   const navigate = useNavigate();
+  const [isEmpty, setIsEmpty] = useState(true);
   const [canRender, setCanRender] = useState(false);
   const [requests, setRequests] = useState<number[]>([]);
   const [productsCards, setProductsCards] = useState(products);
@@ -22,6 +23,10 @@ const RequestsPage= () => {
 
       // Filter products to only are included in requests array from localforage
       const productsInRequests = products.filter(product => requests.includes(product.id));
+
+      if (productsInRequests.length > 0) {
+        setIsEmpty(false);
+      }
 
       setProductsCards(productsInRequests);
       setCanRender(true);
@@ -84,6 +89,8 @@ const RequestsPage= () => {
               key={item.id}
             />
       ))}
+
+      {isEmpty && <p>Não há pedidos</p>}
     </section>
   </main>)
 }
