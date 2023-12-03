@@ -30,7 +30,7 @@
   font-weight: 500;
 }
 
-.product-page section img {
+.product-page section img.product {
   width: 90%;
   border-radius: 20px;
   margin: auto;

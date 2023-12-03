@@ -1,28 +1,15 @@
 import React, { useRef, useState, useLayoutEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { getFavorites, addToCart, addToFavorites, removeFromFavorites, addToRequests } from '../scripts/handleStorage.js'
-import ModalManager from '../components/ModalManager.js'; 
+import ModalManager from '../components/ModalManager.js';
+import StarsBox from '../components/StarsBox.tsx'; 
 import icon_heart from '../assets/heart.svg'
 import icon_full_heart from '../assets/full-heart.svg'
-import icon_star from '../assets/star-100.png'
-import icon_0 from '../assets/star-0.png'
-import icon_25 from '../assets/star-25of100.png'
-import icon_35 from '../assets/star-35of100.png'
-import icon_50 from '../assets/star-50of100.png'
-import icon_75 from '../assets/star-75of100.png'
 import '../css/pages.css'
-import '../css/StorePage.css'
-import '../css/AccountPage.css'
 import '../css/ProductPage.css'
 
 interface ProductPageProps {
   data: Product[]
-}
-
-const styledStar = {
-  width: '16px',
-  height: '16px',
-  margin: '0px'
 }
 const styledAlignedBox = {
   display: 'flex',
@@ -31,45 +18,6 @@ const styledAlignedBox = {
   justifyContent: 'center',
   gap: '6px',
   alignItems: 'center'
-}
-
-function getStars(number: number | undefined) {
-  if (!number) return;
-  const starsArray = [];
-  const numberFullStars = Math.trunc(number);
-  const lastStar = Number(Math.abs(number % 1).toFixed(1));
-
-  for(let i = 0; i < numberFullStars; i++) {
-    starsArray.push((
-      <img src={icon_star} style={styledStar} key={i}/>
-    ));
-  };
-  // It s nescery to add a key to the last star, because the react demands unique keys to all
-  const lastKey = numberFullStars + 1;
-  
-  if (lastStar <= .1){
-    starsArray.push((
-      <img src={icon_0} style={styledStar} key={lastKey}/>
-    ));
-  } else if (lastStar <= .2) {
-    starsArray.push((
-      <img src={icon_25} style={styledStar} key={lastKey}/>
-    ));
-  } else if (lastStar <= .3) {
-    starsArray.push((
-      <img src={icon_35} style={styledStar} key={lastKey}/>
-    ));
-  } else if (lastStar <= .6) {
-    starsArray.push((
-      <img src={icon_50} style={styledStar} key={lastKey}/>
-    ));
-  } else if (lastStar <= .8) {
-    starsArray.push((
-      <img src={icon_75} style={styledStar} key={lastKey}/>
-    ));
-  };
-
-  return starsArray;
 }
 
 const ProductPage: React.FC<ProductPageProps> = ({data}) => {
@@ -118,7 +66,6 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
         favoriteButton.current.classList.add('active');
         favoriteButton.current.src = icon_full_heart;
       }
-
       setFavorites(favorites);
     })
   }, []);
@@ -135,39 +82,37 @@ const ProductPage: React.FC<ProductPageProps> = ({data}) => {
     </header>
 
     <section className='middle-section'>
-        <img src={data[numberID].image} />
-        <h2>{data[numberID].name}</h2>
-        <hr />
-        <p className='desc'>{data[numberID].desc}</p>
-    
-        <div className="review" style={styledAlignedBox}>
-          <span>{data[numberID].stars}</span>
-          {getStars(data[numberID].stars)}
-        </div>
+      <img src={data[numberID].image} className='product'/>
+      <h2>{data[numberID].name}</h2>
+      <hr />
+      <p className='desc'>{data[numberID].desc}</p>
+  
+      <div className="review" style={styledAlignedBox}>
+        <StarsBox starsNumber={data[numberID].stars}/>
+      </div>
 
-        <div className="flexLine">
-          <div className='price'>
-            <div></div>
-            <p>
-              {data[numberID].price.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
-              </p>
-            <div onClick={toggleFavorite}>
-              <img ref={favoriteButton} src={icon_heart} alt="favorite" />
-            </div>
+      <div className="flexLine">
+        <div className='price'>
+          <div></div>
+          <p>
+            {data[numberID].price.toLocaleString("pt-br", {style: "currency",currency: "BRL"})}
+            </p>
+          <div onClick={toggleFavorite}>
+            <img ref={favoriteButton} src={icon_heart} alt="favorite" />
           </div>
         </div>
+      </div>
 
-        <div className="flexLine">
-          <button onClick={addProductToCard}>Adicionar ao Carrinho</button>
-          <button onClick={Request}>Comprar</button>
-        </div>
-        <hr />
-        <div>
-          <p className="store">
-            {data[numberID].store.name} - {data[numberID].store.phone}
-          </p>
-        </div>
-        
+      <div className="flexLine">
+        <button onClick={addProductToCard}>Adicionar ao Carrinho</button>
+        <button onClick={Request}>Comprar</button>
+      </div>
+      <hr />
+      <div>
+        <p className="store">
+          {data[numberID].store.name} - {data[numberID].store.phone}
+        </p>
+      </div>
     </section>
 
     <ModalManager
