@@ -8,6 +8,7 @@ import '../css/pages.css'
 
 const FavoritesPage= () => {
   const navigate = useNavigate();
+  const [isEmpty, setIsEmpty] = useState(true);
   const [canRender, setCanRender] = useState(false);
   const [favorites, setFavorites] = 
   useState<number[]>([]);
@@ -26,6 +27,9 @@ const FavoritesPage= () => {
   
       // Set products to render
       setFavoritesCards(productsInFavorites);
+      if (productsInFavorites.length > 0) {
+        setIsEmpty(false);
+      }
       // Render
       setCanRender(true)
     }).catch(err => {
@@ -85,8 +89,13 @@ const FavoritesPage= () => {
               price={item.price}
               stars={item.stars}
               key={item.id}
-            />
-        ))}
+            />))
+      }
+
+      {isEmpty && (
+          <p>Sem produtos nos Favoritos.</p>
+        )
+      }
     </section>
   </main>)
 }
