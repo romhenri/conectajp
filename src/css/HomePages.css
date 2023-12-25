@@ -22,10 +22,15 @@
   margin-bottom: 20px;
 }
 
+.productCard h2 {
+  margin-top: 0px;
+}
+
 .grid {
   display: flex;
   gap: 3px;
   margin-bottom: 3px;
+  background-color: rgba(240, 248, 255, 0.50);
 }
 
 .grid div {

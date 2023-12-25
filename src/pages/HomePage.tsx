@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import ProductsInline from '../components/ProductsInline'
+import ProductCard from '../components/ProductCard'
 import '../css/pages.css'
 import '../css/HomePages.css'
 
@@ -66,6 +67,29 @@ const HomePage: React.FC<HomePageProps> =
           data={data}
           array={[1, 6, 7, 16, 18]}
         />
+
+        <hr />
+
+        <h2>Destaques:</h2>
+
+        <ProductCard
+          image= {data[10].image}
+          title= {data[10].name}
+          productId= {data[10].id}
+          price= {data[10].price}
+          stars= {data[10].stars}
+          onClick= {() => navigate('loja/produto/10')}
+        />
+
+        <ProductCard
+          image= {data[16].image}
+          title= {data[16].name}
+          productId= {data[16].id}
+          price= {data[16].price}
+          stars= {data[16].stars}
+          onClick= {() => navigate('loja/produto/16')}
+        />
+
       </section>
     </main>
   )

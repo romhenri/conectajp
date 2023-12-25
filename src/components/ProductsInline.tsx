@@ -15,9 +15,10 @@ const ProductsInline: React.FC<IProductsInline> = (
     <div className="products-inline">
 
       {
-        array.map((item) => {
+        array.map((item, index) => {
           return (
-            <img 
+            <img
+              key={index}
               src={data[item].image}
               alt={data[item].name}
               onClick={() => {
@@ -31,4 +32,4 @@ const ProductsInline: React.FC<IProductsInline> = (
   )
 }
 
-export default ProductsInline
+export default ProductsInline;

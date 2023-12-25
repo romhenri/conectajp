@@ -1,4 +1,4 @@
-import star from '../assets/star-100.png'
+import star from '../assets/star-100.png';
 
 interface ProductCardProps {
   image: any;
@@ -8,6 +8,7 @@ interface ProductCardProps {
   prevPrice?: number | null;
   price: number;
   stars?: number;
+  onClick?: () => void;
 }
 
 const ProductCard: React.FC<ProductCardProps> = 
@@ -19,11 +20,18 @@ const ProductCard: React.FC<ProductCardProps> =
       desc = "",
       prevPrice = null,
       price,
-      stars = 0
+      stars = 0,
+      onClick,
+      ...props
     }
   ) => {
     return (
-    <div className="productCard" data-id={productId}>
+    <div 
+      className="productCard"
+      data-id={productId}
+      onClick={onClick}
+      {...props}
+    >
         <div className="image-box">
           <img src={image}/>
         </div>
@@ -54,4 +62,4 @@ const ProductCard: React.FC<ProductCardProps> =
   )
 }
 
-export default ProductCard
+export default ProductCard;
