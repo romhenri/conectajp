@@ -5,10 +5,11 @@ import '../css/Modal.css'
 interface ModalProps {
   onClose?: () => void;
 }
-
-const ModalNeedToSingup: React.FC<ModalProps> = ({ onClose }) => {
+/* eslint-disable */
+const ModalNeedToSingup: React.FC<ModalProps> = 
+({ onClose }) => {
   const navigate = useNavigate();
-  
+  /* eslint-enable */
   return (
     <div className="bg-modal">
       <div className='modal'>

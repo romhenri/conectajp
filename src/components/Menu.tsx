@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom'
-import '../css/Menu.css'
+import { NavLink } from 'react-router-dom';
+import '../css/Menu.css';
 
 const Menu = () => {
   return (
@@ -31,4 +31,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default Menu;

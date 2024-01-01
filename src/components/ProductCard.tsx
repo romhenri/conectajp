@@ -1,6 +1,7 @@
 import star from '../assets/star-100.png';
 
 interface ProductCardProps {
+  // eslint-disable-next-line
   image: any;
   title: string;
   productId: number,

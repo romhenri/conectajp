@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
-import { getName, getEmail } from '../scripts/handleStorage'
-import emailjs from '@emailjs/browser'
-import localforage from 'localforage'
-import styled from 'styled-components'
-import Page from './Page'
-import ModalManager from '../components/ModalManager'
+import { useEffect, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import localforage from 'localforage';
+import styled from 'styled-components';
+import Page from './Page';
+import ModalManager from '../components/ModalManager';
 
 const Form = styled.form`
   margin-top: 10px;

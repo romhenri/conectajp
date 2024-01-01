@@ -11,6 +11,7 @@ const RequestsPage= () => {
   const navigate = useNavigate();
   const [isEmpty, setIsEmpty] = useState(true);
   const [canRender, setCanRender] = useState(false);
+  // eslint-disable-next-line
   const [requests, setRequests] = useState<number[]>([]);
   const [productsCards, setProductsCards] = useState(products);
 
@@ -44,7 +45,7 @@ const RequestsPage= () => {
     const Cards = document.querySelectorAll('.productCard');
     // console.log(Cards);
     
-    Cards.forEach((card, index) => {
+    Cards.forEach((card) => {
       card.addEventListener('click', () => {
         const idAttr = card.getAttribute('data-id')
         if (idAttr) {
@@ -55,7 +56,7 @@ const RequestsPage= () => {
 
     // Remove "EventListener" to all cards
     return () => {
-      Cards.forEach((card, index) => {
+      Cards.forEach((card) => {
         card.removeEventListener('click', () => {
           const idAttr = card.getAttribute('data-id')
           if (idAttr) {

@@ -1,5 +1,5 @@
-import { MouseEvent } from 'react'
-import styled from 'styled-components'
+import { MouseEvent } from 'react';
+import styled from 'styled-components';
 
 const OptionDiv = styled.div`
  box-sizing: border-box;
@@ -30,4 +30,4 @@ const Option = ({title, ...props}: IOption) => {
   )
 }
 
-export default Option
+export default Option;

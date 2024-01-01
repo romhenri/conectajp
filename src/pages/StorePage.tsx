@@ -23,7 +23,7 @@ const StorePage: React.FC<StorePageProps> =
     }
     // Add "EventListener" to all cards
     const productsCards = document.querySelectorAll('.productCard');
-    productsCards.forEach((card, index) => {
+    productsCards.forEach((card) => {
       if (!isFirstTime) return
       card.addEventListener('click', () => {
         const idAttr = card.getAttribute('data-id')
@@ -36,7 +36,7 @@ const StorePage: React.FC<StorePageProps> =
 
     // Remove "EventListener" to all cards
     return () => {
-      productsCards.forEach((card, index) => {
+      productsCards.forEach((card) => {
         card.removeEventListener('click', () => {
           const idAttr = card.getAttribute('data-id')
           if (idAttr) {

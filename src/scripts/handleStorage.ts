@@ -3,43 +3,39 @@ import localforage from "localforage";
 localforage.getItem('cart', function (err, value) {
   if(!value) {
     localforage.setItem('cart', [], function (err) {
-    })
-  };
+    console.log(err); })
+  }
   }
 );
 localforage.getItem('favorites', function (err, value) {
   if(!value) {
-    localforage.setItem('favorites', [], function (err) {
-    })
-  };
+    localforage.setItem('favorites', [], function (err) {console.log(err);})
+  }
   }
 );
 localforage.getItem('requests', function (err, value) {
   if(!value) {
-    localforage.setItem('requests', [], function (err) {
-    })
-  };
+    localforage.setItem('requests', [], function (err) {console.log(err);})
+  }
   }
 );
 localforage.getItem('name', function (err, value) {
   if(!value) {
     localforage.setItem('name', "", function (err) {
-    })
-  };
+    console.log(err);})
+  }
   }
 );
 localforage.getItem('username', function (err, value) {
   if(!value) {
-    localforage.setItem('username', "", function (err) {
-    })
-  };
+    localforage.setItem('username', "", function (err) {console.log(err);})
+  }
   }
 );
 localforage.getItem('email', function (err, value) {
   if(!value) {
-    localforage.setItem('email', "", function (err) {
-    })
-  };
+    localforage.setItem('email', "", function (err) {console.log(err);})
+  }
   }
 );
 // Cart
@@ -58,7 +54,7 @@ export function addToCart(item: number) {
 
     value.push(item)
 
-    localforage.setItem('cart', value, function (err) {})
+    localforage.setItem('cart', value, function (err) {console.log(err);})
   })
 }
 export function removeFromCart(item: number|number[]) {
@@ -79,7 +75,7 @@ export function removeFromCart(item: number|number[]) {
       })
     }
 
-    localforage.setItem('cart', value, function (err) {})
+    localforage.setItem('cart', value, function (err) {console.log(err);})
   })
 }
 // Requests
@@ -107,7 +103,7 @@ export function addToRequests(item: number|number[]) {
       })
     }
 
-    localforage.setItem('requests', value, function (err) {})
+    localforage.setItem('requests', value, function (err) {console.log(err);})
   })
 }
 export function removeFromRequests(item: number) {
@@ -117,7 +113,7 @@ export function removeFromRequests(item: number) {
     const index = value.indexOf(item)
     value.splice(index, 1);
 
-    localforage.setItem('requests', value, function (err) {})
+    localforage.setItem('requests', value, function (err) {console.log(err);})
   })
 }
 // Favorites
@@ -136,7 +132,7 @@ export function addToFavorites(item: number) {
 
     value.push(item)
 
-    localforage.setItem('favorites', value, function (err) {})
+    localforage.setItem('favorites', value, function (err) {console.log(err);})
   })
 }
 export function removeFromFavorites(item: number) {
@@ -147,18 +143,19 @@ export function removeFromFavorites(item: number) {
     const index = value.indexOf(item)
     value.splice(index, 1);
 
-    localforage.setItem('favorites', value, function (err) {})
+    localforage.setItem('favorites', value, function (err) {
+      console.log(err);
+    })
   })
 }
 // General
 export function deleteAllData() {
-  localforage.setItem('cart', [], function (err) {})
-  localforage.setItem('requests', [], function (err) {})
-  localforage.setItem('favorites', [], function (err) {})
-  localforage.setItem('username', "", function (err) {})
-
+  localforage.setItem('cart', [], function 
+  (err) {console.log(err);})
+  localforage.setItem('requests', [], function (err) {console.log(err);})
+  localforage.setItem('favorites', [], function (err) {console.log(err);})
+  localforage.setItem('username', "", function (err) {console.log(err);})
   console.log("Deleted");
-  
 }
 // Other
 export function getName(): Promise<string | null> {
@@ -170,7 +167,9 @@ export function getName(): Promise<string | null> {
   });
 }
 export function saveName(name: string) {
-  localforage.setItem('name', name, function (err) {})
+  localforage.setItem('name', name, function (err) {
+    console.log(err);
+  })
 }
 export function getUsername(): Promise<string | null> {
   return new Promise((resolve, reject) => {
@@ -181,7 +180,9 @@ export function getUsername(): Promise<string | null> {
   });
 }
 export function saveUsername(username: string) {
-  localforage.setItem('username', username, function (err) {})
+  localforage.setItem('username', username, function (err) {
+    console.log(err);
+  })
 }
 export function getEmail(): Promise<string | null> {
   return new Promise((resolve, reject) => {
@@ -192,5 +193,7 @@ export function getEmail(): Promise<string | null> {
   });
 }
 export function saveEmail(email: string) {
-  localforage.setItem('email', email, function (err) {})
+  localforage.setItem('email', email, function (err) {
+    console.log(err);
+  })
 }

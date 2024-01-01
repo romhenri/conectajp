@@ -10,6 +10,7 @@ const FavoritesPage= () => {
   const navigate = useNavigate();
   const [isEmpty, setIsEmpty] = useState(true);
   const [canRender, setCanRender] = useState(false);
+  // eslint-disable-next-line
   const [favorites, setFavorites] = 
   useState<number[]>([]);
   const [favoritesCards, setFavoritesCards] = 
@@ -46,7 +47,7 @@ const FavoritesPage= () => {
     const Cards = document.querySelectorAll('.productCard');
     // console.log(Cards);
     
-    Cards.forEach((card, index) => {
+    Cards.forEach((card) => {
       card.addEventListener('click', () => {
         const idAttr = card.getAttribute('data-id')
         if (idAttr) {
@@ -57,7 +58,7 @@ const FavoritesPage= () => {
   
       // Remove "EventListener" to all cards
       return () => {
-        Cards.forEach((card, index) => {
+        Cards.forEach((card) => {
           card.removeEventListener('click', () => {
             const idAttr = card.getAttribute('data-id')
             if (idAttr) {

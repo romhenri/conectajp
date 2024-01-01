@@ -1,14 +1,14 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { products }  from '../data/productsData.ts'
-import { getCart, addToRequests, removeFromCart } from '../scripts/handleStorage.js'
-import ProductCard from '../components/ProductCard'
+import { useEffect, useLayoutEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { products }  from '../data/productsData.ts';
+import { getCart, addToRequests, removeFromCart } from '../scripts/handleStorage.js';
+import ProductCard from '../components/ProductCard';
 import ModalManager from '../components/ModalManager.js'; 
-import '../css/pages.css'
-import '../css/CartPage.css'
+import '../css/pages.css';
+import '../css/CartPage.css';
 
 const CartPage= () => {
-  var total: number = 0
+  let total: number = 0
   const navigate = useNavigate();
   const [isEmpty, setIsEmpty] = useState(true);
   const [canRender, setCanRender] = useState(false);
@@ -49,7 +49,7 @@ const CartPage= () => {
     const Cards = document.querySelectorAll('.productCard');
     // console.log(Cards);
     
-    Cards.forEach((card, index) => {
+    Cards.forEach((card) => {
       card.addEventListener('click', () => {
         const idAttr = card.getAttribute('data-id')
         if (idAttr) {
@@ -60,7 +60,7 @@ const CartPage= () => {
 
     // Remove "EventListener" to all cards
     return () => {
-      Cards.forEach((card, index) => {
+      Cards.forEach((card) => {
         card.removeEventListener('click', () => {
           const idAttr = card.getAttribute('data-id')
           if (idAttr) {

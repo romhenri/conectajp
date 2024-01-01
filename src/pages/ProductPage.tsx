@@ -22,7 +22,7 @@ const styledAlignedBox = {
 
 const ProductPage: React.FC<ProductPageProps> = ({data}) => {
   // const favoriteButton = useRef<HTMLDivElement>(null);
-  const [favorites, setFavorites] = useState<number[]>([]);
+  const [favorites, setFavorites] = useState<number[]>([]); // eslint-disable-line
   const favoriteButton = useRef<HTMLImageElement>(null);
   const { Id } = useParams();
   const navigate = useNavigate();

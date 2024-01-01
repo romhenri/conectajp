@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router-dom'
-import ProductsInline from '../components/ProductsInline'
-import ProductCard from '../components/ProductCard'
-import '../css/pages.css'
-import '../css/HomePages.css'
+import { useNavigate } from 'react-router-dom';
+import ProductsInline from '../components/ProductsInline';
+import ProductCard from '../components/ProductCard';
+import '../css/pages.css';
+import '../css/HomePages.css';
 
 interface HomePageProps {
   data: Product[]
@@ -95,4 +95,4 @@ const HomePage: React.FC<HomePageProps> =
   )
 }
 
-export default HomePage
+export default HomePage;

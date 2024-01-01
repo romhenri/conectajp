@@ -1,7 +1,8 @@
-import { useEffect } from "react"
-import '../css/pages.css'
-import '../css/MapPage.css'
+import { useEffect } from "react";
+import '../css/pages.css';
+import '../css/MapPage.css';
 
+/* eslint-disable */
 const MapPage = () => {
   //@ts-ignore
   let map: google.maps.Map;
@@ -88,6 +89,7 @@ const MapPage = () => {
       </div>
     </main>
   )
-}
+};
+/* eslint-enable */
 
-export default MapPage
+export default MapPage;

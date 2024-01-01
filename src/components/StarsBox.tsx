@@ -26,7 +26,7 @@ function getStars(number: number) {
     starsArray.push((
       <StyledStar src={icon_star} key={i}/>
     ));
-  };
+  }
   // It s nescery to add a key to the last star, because the react demands unique keys to all
   const lastKey = numberFullStars + 1;
   
@@ -50,7 +50,7 @@ function getStars(number: number) {
     starsArray.push((
       <StyledStar src={icon_75} key={lastKey}/>
     ));
-  };
+  }
 
   return starsArray;
 }

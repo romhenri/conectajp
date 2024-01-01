@@ -1,5 +1,5 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type IPage = {
   title: string;
@@ -32,4 +32,4 @@ const Page = ({title, styleClass, children}: IPage) => {
   )
 }
 
-export default Page
+export default Page;

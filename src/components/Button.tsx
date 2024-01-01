@@ -4,6 +4,7 @@ type IButton = {
   text: string,
   bg?: string,
   className?: string,
+	// eslint-disable-next-line 
   onClick?: any
 }
 
@@ -20,19 +21,15 @@ const Btn = styled.button`
 `
 
 const Button = ({ text, bg, className, onClick }: IButton) => {
-	// const handleClick = onClick ? onClick : () => console.log("Sem Função!");
-
 	const handleClick = () => {
-		if (onClick === null) {
-
-   	} else if (onClick) {
+		if (onClick) {
 			onClick();
 
 		} else {
 			// console.log(typeof(onClick));
-      console.log("Sem Função Específica!");
-    }
-  };
+			console.log("Sem Função Específica!");
+		}
+	};
 
 	return (
 		<Btn

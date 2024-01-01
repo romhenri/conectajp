@@ -1,11 +1,10 @@
-// import localforage from "localforage";
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 import Input from "../components/Input.tsx";
 import Button from "../components/Button.tsx";
 import {saveName, saveUsername, saveEmail} from '../scripts/handleStorage';
-import '../css/pages.css'
+import '../css/pages.css';
 
 const SingupSection = styled.section`
   padding-top: 10px;

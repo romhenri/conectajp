@@ -1,12 +1,11 @@
-import star from '../assets/star-30.png'
-
 interface RequestCardProps {
+  // eslint-disable-next-line
   image: any;
   title: string;
   productId: number,
   desc?: string;
   prevPrice?: number | null;
-  price: number;
+  price?: number;
   stars?: number;
 }
 
@@ -17,9 +16,6 @@ const RequestCard: React.FC<RequestCardProps> =
       title = "",
       productId,
       desc = "",
-      prevPrice = null,
-      price,
-      stars = 0
     }
   ) => {
     return (
@@ -38,6 +34,6 @@ const RequestCard: React.FC<RequestCardProps> =
         </div>
       </div>
   )
-}
+};
 
 export default RequestCard;

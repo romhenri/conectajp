@@ -1,8 +1,7 @@
-import { useNavigate, useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { useEffect, useLayoutEffect, useState } from "react"
 
 const SearchBar = () => {
-  const navigate = useNavigate();
   const location = useLocation();
 
   const [searchTerm, setSearchTerm] = useState("")
@@ -35,13 +34,6 @@ const SearchBar = () => {
     searchBar.addEventListener("keyup", () => {
       setSearchTerm(searchBar.value.toLowerCase())
     })
-
-    // if (termInURL) {
-      // setSearchTerm(`${termInURL}`)
-      // setIsQueryDone(true)
-      // searchBar.value = `${termInURL}`
-      // navigate(`/loja?q=${encodeURIComponent(searchTerm)}`);
-    // }
   }
 
   useLayoutEffect(() => {
