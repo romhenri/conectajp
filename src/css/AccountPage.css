@@ -148,6 +148,12 @@
   border-bottom: none;
 }
 
+.account-section footer {
+  width: 100%;
+  margin-top: 10px;
+  opacity: .8;
+}
+
 .account-section footer a {
   text-decoration: none;
   color: #00000096;

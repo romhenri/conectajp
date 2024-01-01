@@ -129,7 +129,7 @@ function App() {
         <Menu/>
       </Router>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
